@@ -1,0 +1,22 @@
+{
+    "empid": 10084, 
+    "division": "Department of Software Systems (SCOPE)", 
+    "school": "School of Computer Engineering", 
+    "name": "KALYANARAMAN P", 
+    "designation": "Professor", 
+    "open_hours": [
+        {
+            "start_time": "04:00 PM", 
+            "day": "Mon", 
+            "end_time": "05:00 PM"
+        }, 
+        {
+            "start_time": "10:00 AM", 
+            "day": "Wed", 
+            "end_time": "11:00 AM"
+        }
+    ], 
+    "intercom": "2840", 
+    "email": "pkalyanaraman@vit.ac.in", 
+    "room": "SJT-101-H"
+}

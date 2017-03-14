@@ -1,0 +1,22 @@
+{
+    "empid": 10076, 
+    "division": "Department of Mathematics (SAS)", 
+    "school": "School of Advanced Sciences", 
+    "name": "CHANDRASEKARAN V M", 
+    "designation": "Senior Professor", 
+    "open_hours": [
+        {
+            "start_time": "11:00 AM", 
+            "day": "Mon", 
+            "end_time": "12:00 PM"
+        }, 
+        {
+            "start_time": "04:30 PM", 
+            "day": "Thu", 
+            "end_time": "05:30 PM"
+        }
+    ], 
+    "intercom": "2325", 
+    "email": "vmchandrasekaran@vit.ac.in", 
+    "room": "TT-124-0"
+}

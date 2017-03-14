@@ -1,0 +1,22 @@
+{
+    "empid": 10073, 
+    "division": "Department of Communication Engineering (SENSE)", 
+    "school": "School of Electronics Engineering", 
+    "name": "THIRIPURASUNDARI D", 
+    "designation": "Professor", 
+    "open_hours": [
+        {
+            "start_time": "02:00 PM", 
+            "day": "Tue", 
+            "end_time": "03:00 PM"
+        }, 
+        {
+            "start_time": "10:00 AM", 
+            "day": "Thu", 
+            "end_time": "11:00 AM"
+        }
+    ], 
+    "intercom": "2415", 
+    "email": "dthiripurasundari@vit.ac.in", 
+    "room": "TT-242-242"
+}

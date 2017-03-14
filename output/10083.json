@@ -1,0 +1,22 @@
+{
+    "empid": 10083, 
+    "division": "Department of Chemistry (SAS)", 
+    "school": "School of Advanced Sciences", 
+    "name": "SATHIYANARAYANAN K", 
+    "designation": "Senior Professor", 
+    "open_hours": [
+        {
+            "start_time": "03:00 PM", 
+            "day": "Mon", 
+            "end_time": "04:00 PM"
+        }, 
+        {
+            "start_time": "03:00 PM", 
+            "day": "Tue", 
+            "end_time": "04:00 PM"
+        }
+    ], 
+    "intercom": "2801", 
+    "email": "sathiyanarayanank@vit.ac.in", 
+    "room": "TT-730-730"
+}

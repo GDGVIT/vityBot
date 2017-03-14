@@ -1,0 +1,22 @@
+{
+    "empid": 10079, 
+    "division": "Department of MBA (VITBS)", 
+    "school": "VIT Business School", 
+    "name": "GOMATHI S", 
+    "designation": "Senior Professor", 
+    "open_hours": [
+        {
+            "start_time": "10:30 AM", 
+            "day": "Mon", 
+            "end_time": "12:30 PM"
+        }, 
+        {
+            "start_time": "10:00 AM", 
+            "day": "Tue", 
+            "end_time": "12:00 PM"
+        }
+    ], 
+    "intercom": "2782", 
+    "email": "sgomatthi@vit.ac.in", 
+    "room": "SJT-622-D"
+}

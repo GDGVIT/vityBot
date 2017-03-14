@@ -1,0 +1,22 @@
+{
+    "empid": 10091, 
+    "division": "Department of Control and Automation (SELECT)", 
+    "school": "School of Electrical Engineering", 
+    "name": "RAMESH V", 
+    "designation": "Professor", 
+    "open_hours": [
+        {
+            "start_time": "03:30 PM", 
+            "day": "Mon", 
+            "end_time": "04:30 PM"
+        }, 
+        {
+            "start_time": "09:30 AM", 
+            "day": "Fri", 
+            "end_time": "10:30 AM"
+        }
+    ], 
+    "intercom": "2414", 
+    "email": "vramesh@vit.ac.in", 
+    "room": "TT-240-1"
+}
