@@ -1,14 +1,18 @@
-subjects = {'DLM': ['digital', 'dlm', 'microprocessors'], 'DSA': ['dsa', 'data', 'algorithms'],  'PHY': ['phy', 'physics'], 'MAT': ['mat', 'maths', 'math' 'ade', 'applications']}
+subjects = {'DLM': ['digital', 'dlm', 'microprocessors'], 'DSA': ['dsa', 'data', 'algorithms'],
+            'PHY': ['phy', 'physics'], 'MAT': ['mat', 'maths', 'math' 'ade', 'applications']}
+
 
 def intersection_list(li1, li2):
     """
-    checks for interesection of elements in two list
+    checks for intersection of elements in two list
+    and returns the first matching element present in both lists
     """
     for i in li1:
         if i in li2:
             return i
 
     return ''
+
 
 def intersection_dict(li, subs_dict):
     """
@@ -21,7 +25,11 @@ def intersection_dict(li, subs_dict):
 
     return ''
 
+
 def extractKeyWords(li):
+    """
+    function extracts keywords necessary for querying from the input string
+    """
     global subjects
     keywords = list()
 
