@@ -69,11 +69,11 @@ def get_keyword(query):
     attend = ['go', 'attend']
     miss = ['miss', 'skip', 'don\'t', 'debarred']
 
-    # code to check if queries regarding attendance over days are asked
+    # code to check if queries regarding attendance over a few classes are asked
     li = list()
     flag = False
     for s in query.split(' '):
-        if s.isdigit():
+        if s.isdigit():         #push no of classes if it exist to index 1
             if flag:
                 li.append(s)
                 break
@@ -88,7 +88,7 @@ def get_keyword(query):
                 li.append('debarred')
                 flag = True
 
-    if len(li) == 2:
+    if len(li) == 1 or len(li) == 2:
         return li
 
     if 'attendance' in query:

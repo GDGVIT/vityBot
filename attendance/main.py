@@ -19,18 +19,18 @@ print 'Q/q to quit\n'
 
 while True:
     query = raw_input('>>').rstrip('?')
-
     if query == 'q':
         break
 
     course_reqd = string_functions.find_match(user.courses, query)
 
-    if course_reqd is None:
-        print 'can\'t get you'
-        break
-
     print
 
     keyword = string_functions.get_keyword(query)
 
-    print handle_query.get_response(keyword, course_reqd)
+    response = handle_query.get_response(keyword, course_reqd)
+
+    if response is None:
+        print 'can\'t get you'
+    else:
+        print response

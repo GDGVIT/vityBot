@@ -8,14 +8,16 @@ def get_response(keyword, course):
 
     if type(keyword) == list:
         if 'attendance' in keyword:
-            s = course.attendance.attend_next_class(int(keyword[1]))
+            n = keyword[1] if len(keyword) == 2 else 1
+            s = course.attendance.attend_next_class(n)
 
             response = 'You will have an attendance of ' + '%.2f' % s
 
             return response
 
         elif 'debarred' in keyword:
-            s = course.attendance.miss_next_class(int(keyword[1]))
+            n = keyword[1] if len(keyword) == 2 else 1
+            s = course.attendance.miss_next_class(n)
 
             response = 'You will have an attendance of ' + '%.2f' % s
 
