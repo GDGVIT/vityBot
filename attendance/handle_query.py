@@ -11,7 +11,7 @@ def get_response(keyword, course):
             n = keyword[1] if len(keyword) == 2 else 1
             s = course.attendance.attend_next_class(n)
 
-            response = 'You will have an attendance of ' + '%.2f' % s
+            response = 'You will have an attendance of ' + '%.2f in ' % s + course.course_code
 
             return response
 
@@ -19,7 +19,7 @@ def get_response(keyword, course):
             n = keyword[1] if len(keyword) == 2 else 1
             s = course.attendance.miss_next_class(n)
 
-            response = 'You will have an attendance of ' + '%.2f' % s
+            response = 'You will have an attendance of ' + '%.2f in ' % s + course.course_code
 
             if course.attendance.isDebarred(s):
                 response += '\nYou will be debarred'

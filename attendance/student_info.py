@@ -119,13 +119,3 @@ class Student:
 
             temp = Course(c_code, c_title, c_type, self.grade, c_names, [a_ac, a_tc])
             self.courses.append(temp)
-
-    def debug(self):
-        print self.name
-        print self.reg_no
-        print self.grade
-        print
-
-        for i in self.courses:
-            print i.course_code, '\t',
-            print i.subject_type
