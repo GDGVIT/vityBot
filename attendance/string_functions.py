@@ -1,4 +1,6 @@
 from fuzzywuzzy import fuzz
+import json
+import day_functions
 
 
 def get_names(course_dict):
@@ -58,6 +60,26 @@ def find_match(course_list, query_string):
     return max_course
 
 
+def get_days(slots):
+    """
+    get the days from the slots
+    :param slots:list of slots
+    """
+
+    with open('../tt.json') as file_obj:
+        table = json.load(file_obj)
+
+    days = list()
+
+    for slot in slots:
+        for day in table.keys():
+            if slot in table[day]:
+                if day not in days:
+                    days.append(day)
+
+    return days
+
+
 def get_keyword(query):
     """
     get keywords necessary for generating response
@@ -65,30 +87,34 @@ def get_keyword(query):
     :return:
     """
 
-    #words and their synonyms
+    # words and their synonyms
     attend = ['go', 'attend']
     miss = ['miss', 'skip', 'don\'t', 'debarred']
 
     # code to check if queries regarding attendance over a few classes are asked
     li = list()
-    flag = False
+    flag = False                # flag for checking if digit/day follows the keywords reqd(attend/miss)
     for s in query.split(' '):
-        if s.isdigit():         #push no of classes if it exist to index 1
+        if s.isdigit():         # push no of classes if it exist to index 1
             if flag:
-                li.append(s)
+                li.append(int(s))
                 break
 
-        if s in attend:
-            if not flag:
-                li.append('attendance')
-                flag = True
+        elif s in day_functions.weekdays:
+            if flag:
+                li.append(s)    # push the week of day if it exist to index 1 of li
 
         if s in miss:
             if not flag:
                 li.append('debarred')
                 flag = True
 
-    if len(li) == 1 or len(li) == 2:
+        if s in attend:
+            if not flag:
+                li.append('attendance')
+                flag = True
+
+    if len(li) == 1 or len(li) == 2:    # list can't have values other than 1 and 2
         return li
 
     if 'attendance' in query:

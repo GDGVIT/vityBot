@@ -8,25 +8,24 @@ class Course:
     Course class containing data like code, title, type and attendance of a course
     """
 
-    def __init__(self, code, title, type, grade, names_list, attend=[]):
+    def __init__(self, code, title, type, grade, names_list, days_list, attend):
         """
-
-        :param code:
-        :param title:
-        :param type:
+        :param grade: cgpa, reqd to get min percent of the student
         :param names_list: list of possible names of the course
-        :param attend: pass 2 values corresponding to attended and total classes
+        :param days_list: list of days where the classes are conducted
+        :param attend: pass list of 2 values corresponding to attended and total classes
         """
         self.course_code = code
         self.course_title = title
         self.subject_type = type
         self.names = names_list
+        self.days = days_list
 
         self.attendance = Attendance(attend[0], attend[1])
 
         if grade >= 9:
-            self.attendance.minimum_percentage_required = None
-        if self.subject_type == 'Lab Only' or 'Embedded Lab':
+            self.attendance.minimum_percentage_required = 0
+        if self.subject_type == 'Lab Only' or self.subject_type == 'Embedded Lab':
             self.attendance.attendance_units = 2
 
     def get_dict(self):
@@ -78,13 +77,23 @@ class Attendance:
 
     def attend_next_class(self, no_of_classes=1):
         new_percentage = float(self.attended_classes + no_of_classes * self.attendance_units) / \
-                                (self.total_classes + no_of_classes * self.attendance_units) * 100
+                         (self.total_classes + no_of_classes * self.attendance_units) * 100
 
         return new_percentage
 
     def miss_next_class(self, no_of_classes=1):
         new_percentage = float(self.attended_classes) / (self.total_classes + no_of_classes
                                                          * self.attendance_units) * 100
+
+        return new_percentage
+
+    def miss_class_on(self, no_of_classes):
+        """
+        percentage if missed nth class from today
+        :param no_of_classes:(n)
+        """
+        new_percentage = float(self.attended_classes + (no_of_classes - 1) * self.attendance_units) / \
+                         (self.total_classes + no_of_classes * self.attendance_units) * 100
 
         return new_percentage
 
@@ -110,12 +119,14 @@ class Student:
             c_title = course['course_title']
             c_type = course['subject_type']
             c_names = string_functions.get_names(course)
+            c_slots = course['slot'].split('+')
+            c_days = string_functions.get_days(c_slots)
 
             a_tc = course['attendance']['total_classes']
             a_ac = course['attendance']['attended_classes']
 
-            if a_tc == 0:   #prevent ZeroDivisionError
+            if a_tc == 0:  # prevent ZeroDivisionError
                 continue
 
-            temp = Course(c_code, c_title, c_type, self.grade, c_names, [a_ac, a_tc])
+            temp = Course(c_code, c_title, c_type, self.grade, c_names, c_days, [a_ac, a_tc])
             self.courses.append(temp)
