@@ -95,7 +95,7 @@
             "venue": "SJT216", 
             "attendance": {
                 "attendance_percentage": 100, 
-                "attended_classes": 20,
+                "attended_classes": 26,
                 "total_classes": 26, 
                 "registration_date": "27/12/2016 17:35:38", 
                 "details": [
@@ -203,8 +203,7 @@
                         "date": "2017-05-05", 
                         "class_units": 2
                     }
-                ], 
-                "attended_classes": 26
+                ]
             }, 
             "faculty": "PRAVEEN KUMAR REDDY M. - SITE", 
             "course_code": "ITE1001", 
@@ -238,7 +237,7 @@
             "venue": "SJT217", 
             "attendance": {
                 "attendance_percentage": 93, 
-                "attended_classes": 20,
+                "attended_classes": 24,
                 "total_classes": 26, 
                 "registration_date": "27/12/2016 17:50:14", 
                 "details": [
@@ -346,8 +345,7 @@
                         "date": "2017-04-24", 
                         "class_units": 2
                     }
-                ], 
-                "attended_classes": 24
+                ]
             }, 
             "faculty": "AGILANDEESWARI.L - SITE", 
             "course_code": "ITE1004", 
@@ -408,8 +406,8 @@
             ], 
             "venue": "SJT424", 
             "attendance": {
-                "attendance_percentage": 89, 
-                "attended_classes": 20,
+                "attendance_percentage": 89,
+                "attended_classes": 37,
                 "total_classes": 42, 
                 "registration_date": "04/01/2017 10:35:01", 
                 "details": [
@@ -749,8 +747,7 @@
                         "date": "2017-05-04", 
                         "class_units": 0
                     }
-                ], 
-                "attended_classes": 37
+                ]
             }, 
             "faculty": "THILAGAVATHI K - SAS", 
             "course_code": "MAT2002", 
@@ -812,7 +809,7 @@
             "venue": "SJT211", 
             "attendance": {
                 "attendance_percentage": 91, 
-                "attended_classes": 20,
+                "attended_classes": 38,
                 "total_classes": 42, 
                 "registration_date": "27/12/2016 17:53:47", 
                 "details": [
@@ -1152,8 +1149,7 @@
                         "date": "2017-05-05", 
                         "class_units": 1
                     }
-                ], 
-                "attended_classes": 38
+                ]
             }, 
             "faculty": "SAMIR RANJAN MEHER - SAS", 
             "course_code": "PHY1001", 
@@ -1187,11 +1183,10 @@
             "venue": "", 
             "attendance": {
                 "attendance_percentage": 0, 
-                "attended_classes": 20,
+                "attended_classes": 0,
                 "total_classes": 0, 
                 "registration_date": "", 
-                "details": null, 
-                "attended_classes": 0
+                "details": null
             }, 
             "faculty": "", 
             "course_code": "Embedded Project", 
@@ -1225,7 +1220,7 @@
             "venue": "SJT211A", 
             "attendance": {
                 "attendance_percentage": 100, 
-                "attended_classes": 20,
+                "attended_classes": 13,
                 "total_classes": 13, 
                 "registration_date": "27/12/2016 18:16:55", 
                 "details": [
@@ -1333,8 +1328,7 @@
                         "date": "2017-04-24", 
                         "class_units": 1
                     }
-                ], 
-                "attended_classes": 13
+                ]
             }, 
             "faculty": "RAMASUBRAMANIAN V - SAS", 
             "course_code": "PHY1999", 
@@ -1368,7 +1362,7 @@
             "venue": "SJT120", 
             "attendance": {
                 "attendance_percentage": 96, 
-                "attended_classes": 20,
+                "attended_classes": 80,
                 "total_classes": 84, 
                 "registration_date": "27/12/2016 17:39:09", 
                 "details": [
@@ -1708,8 +1702,7 @@
                         "date": "2017-05-05", 
                         "class_units": 2
                     }
-                ], 
-                "attended_classes": 80
+                ]
             }, 
             "faculty": "PRIYA V - SITE", 
             "course_code": "CSE1002", 
@@ -1771,7 +1764,7 @@
             "venue": "SJTG05", 
             "attendance": {
                 "attendance_percentage": 98, 
-                "attended_classes": 20,
+                "attended_classes": 40,
                 "total_classes": 41, 
                 "registration_date": "27/12/2016 17:35:38", 
                 "details": [
@@ -2103,8 +2096,7 @@
                         "date": "2017-05-05", 
                         "class_units": 1
                     }
-                ], 
-                "attended_classes": 40
+                ]
             }, 
             "faculty": "PRAVEEN KUMAR REDDY M. - SITE", 
             "course_code": "ITE1001", 
@@ -2166,7 +2158,7 @@
             "venue": "SJT823", 
             "attendance": {
                 "attendance_percentage": 91, 
-                "attended_classes": 20,
+                "attended_classes": 38,
                 "total_classes": 42, 
                 "registration_date": "27/12/2016 17:31:17", 
                 "details": [
@@ -2506,8 +2498,7 @@
                         "date": "2017-05-04", 
                         "class_units": 1
                     }
-                ], 
-                "attended_classes": 38
+                ]
             }, 
             "faculty": "FACE (APT) - ACAD", 
             "course_code": "STS1001", 
@@ -2541,7 +2532,7 @@
             "venue": "TT436", 
             "attendance": {
                 "attendance_percentage": 100, 
-                "attended_classes": 20,
+                "attended_classes": 26,
                 "total_classes": 26, 
                 "registration_date": "27/12/2016 17:53:47", 
                 "details": [
@@ -2649,8 +2640,7 @@
                         "date": "2017-04-24", 
                         "class_units": 2
                     }
-                ], 
-                "attended_classes": 26
+                ]
             }, 
             "faculty": "SAMIR RANJAN MEHER - SAS", 
             "course_code": "PHY1001", 
@@ -2712,7 +2702,7 @@
             "venue": "SJTG02", 
             "attendance": {
                 "attendance_percentage": 93, 
-                "attended_classes": 20,
+                "attended_classes": 39,
                 "total_classes": 42, 
                 "registration_date": "27/12/2016 17:50:14", 
                 "details": [
@@ -3052,8 +3042,7 @@
                         "date": "2017-05-05", 
                         "class_units": 1
                     }
-                ], 
-                "attended_classes": 39
+                ]
             }, 
             "faculty": "AGILANDEESWARI.L - SITE", 
             "course_code": "ITE1004", 
@@ -3087,7 +3076,7 @@
             "venue": "SMVG16", 
             "attendance": {
                 "attendance_percentage": 79, 
-                "attended_classes": 20,
+                "attended_classes": 22,
                 "total_classes": 28, 
                 "registration_date": "04/01/2017 10:35:01", 
                 "details": [
@@ -3203,8 +3192,7 @@
                         "date": "2017-05-04", 
                         "class_units": 0
                     }
-                ], 
-                "attended_classes": 22
+                ]
             }, 
             "faculty": "THILAGAVATHI K - SAS", 
             "course_code": "MAT2002", 

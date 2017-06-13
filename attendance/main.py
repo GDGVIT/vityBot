@@ -13,6 +13,8 @@ except get_data.LoginError as e:
     print e.message
     exit(1)
 
+print
+
 print 'Hi ' + user.name + '! What do you want me to do?'
 
 print 'Q/q to quit\n'
@@ -28,7 +30,7 @@ while True:
 
     keyword = string_functions.get_keyword(query)
 
-    response = handle_query.get_response(keyword, course_reqd)
+    response = handle_query.get_response(keyword, course_reqd, user)
 
     if response is None:
         print 'can\'t get you'

@@ -32,7 +32,7 @@ def find_match(course_list, query_string):
     :return: course object
     """
 
-    max_out = 0
+    max_out = 0     # the max ratio among the courses
     max_course = None
 
     for course in course_list:
@@ -45,7 +45,7 @@ def find_match(course_list, query_string):
 
         #print course.course_title
 
-        max_in = 0
+        max_in = 0  # the max ratio among different names of the course
 
         for name in course.names:
             ratio = fuzz.token_set_ratio(name, query_string)
@@ -57,7 +57,7 @@ def find_match(course_list, query_string):
             max_out = max_in
             max_course = course
 
-    return max_course
+    return max_course if max_out > 50 else None
 
 
 def get_days(slots):
@@ -87,13 +87,13 @@ def get_keyword(query):
     :return:
     """
 
-    # words and their synonyms
+    # verbs and their synonyms
     attend = ['go', 'attend']
-    miss = ['miss', 'skip', 'don\'t', 'debarred']
+    miss = ['miss', 'skip', 'don\'t', 'bunk']
 
     # code to check if queries regarding attendance over a few classes are asked
     li = list()
-    flag = False                # flag for checking if digit/day follows the keywords reqd(attend/miss)
+    flag = False                # flag for checking if digit/day follows the keywords reqd(attend/miss) in li
     for s in query.split(' '):
         if s.isdigit():         # push no of classes if it exist to index 1
             if flag:
@@ -103,6 +103,7 @@ def get_keyword(query):
         elif s in day_functions.weekdays:
             if flag:
                 li.append(s)    # push the week of day if it exist to index 1 of li
+                break
 
         if s in miss:
             if not flag:
@@ -113,6 +114,9 @@ def get_keyword(query):
             if not flag:
                 li.append('attendance')
                 flag = True
+
+    if 'how' in query:
+        li.append('how')
 
     if len(li) == 1 or len(li) == 2:    # list can't have values other than 1 and 2
         return li

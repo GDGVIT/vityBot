@@ -2,6 +2,7 @@ import get_data
 import login_credential
 import string_functions
 import math
+import json
 
 
 class Course:
@@ -53,7 +54,7 @@ class Attendance:
         self.attended_classes = attended
         self.total_classes = total
 
-        self.attendance_percentage = int(math.ceil(self.attended_classes / self.total_classes * 100))
+        self.attendance_percentage = int(math.ceil(float(self.attended_classes) / self.total_classes * 100))
 
     def get_dict(self):
         q = dict()
@@ -77,14 +78,14 @@ class Attendance:
         return False
 
     def attend_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil((self.attended_classes + no_of_classes * self.attendance_units) /
+        new_percentage = math.ceil(float(self.attended_classes + no_of_classes * self.attendance_units) /
                                    (self.total_classes + no_of_classes * self.attendance_units) * 100)
 
         return int(new_percentage)
 
     def miss_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil(self.attended_classes / (self.total_classes + no_of_classes
-                                                            * self.attendance_units) * 100)
+        new_percentage = math.ceil(float(self.attended_classes) / (self.total_classes + no_of_classes
+                                                                   * self.attendance_units) * 100)
 
         return int(new_percentage)
 
@@ -105,9 +106,13 @@ class Student:
     """
 
     def __init__(self):
-        login_info = login_credential.LoginDetails()
+        # login_info = login_credential.LoginDetails()
+        #
+        # res = get_data.get_course_details(login_info)
 
-        res = get_data.get_course_details(login_info)
+        # work with json data temporarily
+        with open('ffcs.json') as f:
+            res = json.load(f)
 
         self.name = res['name']
         self.reg_no = res['reg_no']
