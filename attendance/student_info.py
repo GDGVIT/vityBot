@@ -1,6 +1,7 @@
 import get_data
 import login_credential
 import string_functions
+import math
 
 
 class Course:
@@ -52,7 +53,7 @@ class Attendance:
         self.attended_classes = attended
         self.total_classes = total
 
-        self.attendance_percentage = float(self.attended_classes) / self.total_classes * 100
+        self.attendance_percentage = int(math.ceil(self.attended_classes / self.total_classes * 100))
 
     def get_dict(self):
         q = dict()
@@ -76,26 +77,26 @@ class Attendance:
         return False
 
     def attend_next_class(self, no_of_classes=1):
-        new_percentage = float(self.attended_classes + no_of_classes * self.attendance_units) / \
-                         (self.total_classes + no_of_classes * self.attendance_units) * 100
+        new_percentage = math.ceil((self.attended_classes + no_of_classes * self.attendance_units) /
+                                   (self.total_classes + no_of_classes * self.attendance_units) * 100)
 
-        return new_percentage
+        return int(new_percentage)
 
     def miss_next_class(self, no_of_classes=1):
-        new_percentage = float(self.attended_classes) / (self.total_classes + no_of_classes
-                                                         * self.attendance_units) * 100
+        new_percentage = math.ceil(self.attended_classes / (self.total_classes + no_of_classes
+                                                            * self.attendance_units) * 100)
 
-        return new_percentage
+        return int(new_percentage)
 
     def miss_class_on(self, no_of_classes):
         """
         percentage if missed nth class from today
         :param no_of_classes:(n)
         """
-        new_percentage = float(self.attended_classes + (no_of_classes - 1) * self.attendance_units) / \
-                         (self.total_classes + no_of_classes * self.attendance_units) * 100
+        new_percentage = math.ceil(float(self.attended_classes + (no_of_classes - 1) * self.attendance_units) /
+                                   (self.total_classes + no_of_classes * self.attendance_units) * 100)
 
-        return new_percentage
+        return int(new_percentage)
 
 
 class Student:
