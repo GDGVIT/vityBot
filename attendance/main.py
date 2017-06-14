@@ -2,6 +2,7 @@ import get_data
 import student_info
 import string_functions
 import handle_query
+import find_DB
 
 try:
     user = student_info.Student()
@@ -24,7 +25,15 @@ while True:
     if query == 'q':
         break
 
+    dbdoc = find_DB.find_match(query)
+    response = find_DB.get_response(dbdoc)
+
     course_reqd = string_functions.find_match(user.courses, query)
+
+    if response and not course_reqd:
+        print
+        print response
+        continue
 
     print
 

@@ -43,8 +43,6 @@ def find_match(course_list, query_string):
             if course.subject_type == 'Embedded Theory':
                 continue
 
-        #print course.course_title
-
         max_in = 0  # the max ratio among different names of the course
 
         for name in course.names:

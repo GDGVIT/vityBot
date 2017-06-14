@@ -118,9 +118,9 @@ def get_response(keyword, course, user):
                     cnt -= 1
 
                     if cnt:
-                        response = 'You can miss %d class(es)' % cnt
+                        response = 'You can miss %d class(es)' % cnt + ' in %s' % course.course_code
                     else:
-                        response = 'You can\'t miss any class'
+                        response = 'You can\'t miss any class' + ' in %s' % course.course_code
 
                     return response
 
@@ -130,6 +130,11 @@ def get_response(keyword, course, user):
                     s = course.attendance.miss_class_on(no_of_classes)
 
                     response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
+
+                    if course.attendance.isDebarred(s):
+                        response += '\nYou will be debarred'
+                    else:
+                        response += '\nYou will not be debarred'
 
                     return response
 
