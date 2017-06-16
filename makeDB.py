@@ -1,6 +1,10 @@
 import pymongo
 import numpy as np
 
+"""
+writes list of question and answer from .npys to DB
+"""
+
 conn = pymongo.MongoClient('localhost', 27017)
 db = conn.vityBot
 coll = db.attendance
@@ -18,5 +22,8 @@ for i in range(len(questions)):
 
     list_docs.append(doc)
     del doc
+
+#clear currrent collection
+coll.drop()
 
 coll.insert_many(list_docs)

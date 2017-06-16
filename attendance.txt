@@ -37,3 +37,15 @@ attendance is locked by thursday evening just before the CAT exams
 Can I get attendance if I get late ?
 
 It is adivisable if you are atmost 5 minutes late. Beyond which it depends on teacher.
+
+What is my attendance in x_class?
+
+your attendance in x_class is x
+
+Am i debarred in x_class?
+
+you have an attendance of x in x_class. you will/will not be debarred
+
+Am i debarred in any subjects?  (all x_classes)
+
+you are debarred in (list of courses) / you are not debarred in any courses
