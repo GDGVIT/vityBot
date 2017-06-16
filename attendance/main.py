@@ -33,6 +33,7 @@ while True:
     if response and not course_reqd:
         print
         print response
+        print 
         continue
 
     print
@@ -45,3 +46,5 @@ while True:
         print 'can\'t get you'
     else:
         print response
+
+    print

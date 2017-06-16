@@ -106,13 +106,9 @@ class Student:
     """
 
     def __init__(self):
-        # login_info = login_credential.LoginDetails()
-        #
-        # res = get_data.get_course_details(login_info)
-
-        # work with json data temporarily
-        with open('ffcs.json') as f:
-            res = json.load(f)
+        login_info = login_credential.LoginDetails()
+        
+        res = get_data.get_course_details(login_info)
 
         self.name = res['name']
         self.reg_no = res['reg_no']
