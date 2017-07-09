@@ -1,3 +1,8 @@
+"""
+the script adds all data from the .npy files to the DB
+"""
+
+
 import pymongo
 import numpy as np
 import json
