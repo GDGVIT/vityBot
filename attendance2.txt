@@ -1,0 +1,28 @@
+Can I bunk my classes on x_day ?
+
+After x_day your projected attendance will be x.(needs data for next answer)
+
+Can I bunk my x_class on x_day?
+
+After x_day your projected attendance for x_class will be x.(needs data for next answer)
+
+How many days can I bunk classes from x_days without getting debarred ?
+
+you can take leave for x_days and then your projected attendance will be x.
+
+How much will my attendance be if I bunk my classes for x_days from coming x_day?
+
+you can take leave for x_days and then your projected attendance will be x.
+
+What is my attendance in x_class?
+
+your attendance in x_class is x
+
+Am i debarred in x_class?
+
+you have an attendance of x in x_class. you will/will not be debarred
+
+Am i debarred in any subjects?  (all x_classes)
+
+you are debarred in (list of courses) / you are not debarred in any courses
+
