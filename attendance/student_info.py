@@ -110,7 +110,7 @@ class Student:
         #
         # res = get_data.get_course_details(login_info)
 
-        with open('ffcs.json') as f:    # temp json file
+        with open('attendance/ffcs.json') as f:    # temp json file
             res = json.load(f)
 
         self.name = res['name']
