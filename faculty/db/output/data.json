@@ -1,0 +1,354 @@
+[
+    {
+        "division": "Department of Electrical Engineering (SELECT)",
+        "designation": "Senior Professor",
+        "school": "School of Electrical Engineering",
+        "room": "TT-241-241",
+        "empid": 10020,
+        "name": "JAYABARATHI T",
+        "open_hours": [],
+        "email": "tjayabarathi@vit.ac.in",
+        "intercom": "2497"
+    },
+    {
+        "division": "Department of Environmental and Water Resources Engineering (SCALE)",
+        "designation": "Senior Professor",
+        "school": "School of Civil and Chemical Engineering",
+        "room": "GDN-115-115",
+        "empid": 10021,
+        "name": "PORCHELVAN P",
+        "open_hours": [
+            {
+                "start_time": "11:30 AM",
+                "day": "Mon",
+                "end_time": "12:30 PM"
+            },
+            {
+                "start_time": "11:30 AM",
+                "day": "Tue",
+                "end_time": "12:30 PM"
+            }
+        ],
+        "email": "pporchelvan@vit.ac.in",
+        "intercom": "0"
+    },
+    {
+        "division": "Department of Manufacturing Engineering (SMEC)",
+        "designation": "Senior Professor",
+        "school": "School of Mechanical Engineering",
+        "room": "MB-03-G",
+        "empid": 10042,
+        "name": "NARAYANAN S.",
+        "open_hours": [],
+        "email": "provc.vlr@vit.ac.in",
+        "intercom": "2006"
+    },
+    {
+        "division": "Department of Mathematics (SAS)",
+        "designation": "Professor",
+        "school": "School of Advanced Sciences",
+        "room": "SJT-413-A",
+        "empid": 10053,
+        "name": "NATARAJAN G",
+        "open_hours": [],
+        "email": "gnatarajan@vit.ac.in",
+        "intercom": "2553"
+    },
+    {
+        "division": "Department of Physics (SAS)",
+        "designation": "Professor",
+        "school": "School of Advanced Sciences",
+        "room": "TT-336-336",
+        "empid": 10055,
+        "name": "RAMESH BABU P",
+        "open_hours": [],
+        "email": "prameshbabu@vit.ac.in",
+        "intercom": "2344"
+    },
+    {
+        "division": "Department of Mathematics (SAS)",
+        "designation": "Professor",
+        "school": "School of Advanced Sciences",
+        "room": "SJT-413-A12",
+        "empid": 10056,
+        "name": "VIJAYA K",
+        "open_hours": [],
+        "email": "kvijaya@vit.ac.in",
+        "intercom": "0"
+    },
+    {
+        "division": "Department of Automotive Engineering (SMEC)",
+        "designation": "Senior Professor",
+        "school": "School of Mechanical Engineering",
+        "room": "GDN-105-105",
+        "empid": 10063,
+        "name": "SENTHIL KUMAR A",
+        "open_hours": [],
+        "email": "asenthilkumar@vit.ac.in",
+        "intercom": "2214"
+    },
+    {
+        "division": "Deptment of English (SSL)",
+        "designation": "Associate Professor",
+        "school": "School of Social Sciences & Languages",
+        "room": "SJT-711-C",
+        "empid": 10068,
+        "name": "SRINIVASAN R",
+        "open_hours": [],
+        "email": "rsrinivasan@vit.ac.in",
+        "intercom": "0"
+    },
+    {
+        "division": "Department of Physics (SAS)",
+        "designation": "Senior Professor",
+        "school": "School of Advanced Sciences",
+        "room": "TT-243-1",
+        "empid": 10072,
+        "name": "JAMES JEBASEELAN SAMUEL E",
+        "open_hours": [],
+        "email": "ejames@vit.ac.in",
+        "intercom": "2416"
+    },
+    {
+        "division": "Department of Communication Engineering (SENSE)",
+        "designation": "Professor",
+        "school": "School of Electronics Engineering",
+        "room": "TT-242-242",
+        "empid": 10073,
+        "name": "THIRIPURASUNDARI D",
+        "open_hours": [
+            {
+                "start_time": "02:00 PM",
+                "day": "Tue",
+                "end_time": "03:00 PM"
+            },
+            {
+                "start_time": "10:00 AM",
+                "day": "Thu",
+                "end_time": "11:00 AM"
+            }
+        ],
+        "email": "dthiripurasundari@vit.ac.in",
+        "intercom": "2415"
+    },
+    {
+        "division": "Department of Mathematics (SAS)",
+        "designation": "Senior Professor",
+        "school": "School of Advanced Sciences",
+        "room": "TT-124-0",
+        "empid": 10076,
+        "name": "CHANDRASEKARAN V M",
+        "open_hours": [
+            {
+                "start_time": "11:00 AM",
+                "day": "Mon",
+                "end_time": "12:00 PM"
+            },
+            {
+                "start_time": "04:30 PM",
+                "day": "Thu",
+                "end_time": "05:30 PM"
+            }
+        ],
+        "email": "vmchandrasekaran@vit.ac.in",
+        "intercom": "2325"
+    },
+    {
+        "division": "Deptment of English (SSL)",
+        "designation": "Associate Professor",
+        "school": "School of Social Sciences & Languages",
+        "room": "SMV-023-E",
+        "empid": 10078,
+        "name": "MD. SAHUL HAMEED M A",
+        "open_hours": [
+            {
+                "start_time": "10:30 AM",
+                "day": "Mon",
+                "end_time": "12:00 PM"
+            },
+            {
+                "start_time": "02:30 PM",
+                "day": "Tue",
+                "end_time": "03:30 PM"
+            }
+        ],
+        "email": "mamohamedsahulhameed@vit.ac.in",
+        "intercom": "2532"
+    },
+    {
+        "division": "Department of MBA (VITBS)",
+        "designation": "Senior Professor",
+        "school": "VIT Business School",
+        "room": "SJT-622-D",
+        "empid": 10079,
+        "name": "GOMATHI S",
+        "open_hours": [
+            {
+                "start_time": "10:30 AM",
+                "day": "Mon",
+                "end_time": "12:30 PM"
+            },
+            {
+                "start_time": "10:00 AM",
+                "day": "Tue",
+                "end_time": "12:00 PM"
+            }
+        ],
+        "email": "sgomatthi@vit.ac.in",
+        "intercom": "2782"
+    },
+    {
+        "division": "Department of MBA (VITBS)",
+        "designation": "Senior Professor",
+        "school": "VIT Business School",
+        "room": "SJT-713-713",
+        "empid": 10080,
+        "name": "MURALI MANOHAR B",
+        "open_hours": [],
+        "email": "bmm@vit.ac.in",
+        "intercom": "2835"
+    },
+    {
+        "division": "Department of Physics (SAS)",
+        "designation": "Senior Professor",
+        "school": "School of Advanced Sciences",
+        "room": "TT-410-410",
+        "empid": 10082,
+        "name": "KALAINATHAN S",
+        "open_hours": [],
+        "email": "skalainathan@vit.ac.in",
+        "intercom": "2350"
+    },
+    {
+        "division": "Department of Chemistry (SAS)",
+        "designation": "Senior Professor",
+        "school": "School of Advanced Sciences",
+        "room": "TT-730-730",
+        "empid": 10083,
+        "name": "SATHIYANARAYANAN K",
+        "open_hours": [
+            {
+                "start_time": "03:00 PM",
+                "day": "Mon",
+                "end_time": "04:00 PM"
+            },
+            {
+                "start_time": "03:00 PM",
+                "day": "Tue",
+                "end_time": "04:00 PM"
+            }
+        ],
+        "email": "sathiyanarayanank@vit.ac.in",
+        "intercom": "2801"
+    },
+    {
+        "division": "Department of Software Systems (SCOPE)",
+        "designation": "Professor",
+        "school": "School of Computer Engineering",
+        "room": "SJT-101-H",
+        "empid": 10084,
+        "name": "KALYANARAMAN P",
+        "open_hours": [
+            {
+                "start_time": "04:00 PM",
+                "day": "Mon",
+                "end_time": "05:00 PM"
+            },
+            {
+                "start_time": "10:00 AM",
+                "day": "Wed",
+                "end_time": "11:00 AM"
+            }
+        ],
+        "email": "pkalyanaraman@vit.ac.in",
+        "intercom": "2840"
+    },
+    {
+        "division": "Department of Control and Automation (SELECT)",
+        "designation": "Professor",
+        "school": "School of Electrical Engineering",
+        "room": "TT-240-1",
+        "empid": 10091,
+        "name": "RAMESH V",
+        "open_hours": [
+            {
+                "start_time": "03:30 PM",
+                "day": "Mon",
+                "end_time": "04:30 PM"
+            },
+            {
+                "start_time": "09:30 AM",
+                "day": "Fri",
+                "end_time": "10:30 AM"
+            }
+        ],
+        "email": "vramesh@vit.ac.in",
+        "intercom": "2414"
+    },
+    {
+        "division": "Department of Software Systems (SCOPE)",
+        "designation": "Professor",
+        "school": "School of Computer Engineering",
+        "room": "SJT-517-D",
+        "empid": 10093,
+        "name": "MARGRET ANOUNCIA S",
+        "open_hours": [],
+        "email": "smargretanouncia@vit.ac.in",
+        "intercom": "2896"
+    },
+    {
+        "division": "Department of Communication Engineering (SENSE)",
+        "designation": "Professor",
+        "school": "School of Electronics Engineering",
+        "room": "TT-132-132",
+        "empid": 10094,
+        "name": "JASMIN PEMEENA PRIYADARISINI M",
+        "open_hours": [],
+        "email": "jasmin@vit.ac.in",
+        "intercom": "2436"
+    },
+    {
+        "division": "Department of Mathematics (SAS)",
+        "designation": "Senior Professor",
+        "school": "School of Advanced Sciences",
+        "room": "SJT-413-A09",
+        "empid": 10095,
+        "name": "MURUGUSUNDARAMOORTHY G",
+        "open_hours": [],
+        "email": "gms@vit.ac.in",
+        "intercom": "2894"
+    },
+    {
+        "division": "Department of Analytics (SCOPE)",
+        "designation": "Senior Professor",
+        "school": "School of Computer Engineering",
+        "room": "MB-207-A",
+        "empid": 10098,
+        "name": "IYENGAR N.CH.S.N.",
+        "open_hours": [],
+        "email": "nchsniyr@vit.ac.in",
+        "intercom": "2104"
+    },
+    {
+        "division": "Department of Communication Engineering (SENSE)",
+        "designation": "Professor",
+        "school": "School of Electronics Engineering",
+        "room": "TT-244-244",
+        "empid": 10105,
+        "name": "SHAMBAVI K",
+        "open_hours": [],
+        "email": "kshambavi@vit.ac.in",
+        "intercom": "2448"
+    },
+    {
+        "division": "Department of Manufacturing Engineering (SMEC)",
+        "designation": "Professor",
+        "school": "School of Mechanical Engineering",
+        "room": "MB-9-G9",
+        "empid": 10106,
+        "name": "MANIVANNAN K",
+        "open_hours": [],
+        "email": "kmanivannan@vit.ac.in",
+        "intercom": "2945"
+    }
+]

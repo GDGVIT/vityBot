@@ -3,9 +3,9 @@ from fuzzywuzzy import fuzz
 import pymongo
 
 
-conn = pymongo.MongoClient('localhost', 27017)
-db = conn.vityBot
-col = db.attendance
+conn = pymongo.MongoClient('mongodb://chatbot-learn:qwerty1234@ds135592.mlab.com:35592/chatbot-learn')
+db = conn['chatbot-learn']
+col = db.ques
 
 
 def find_all(collection):

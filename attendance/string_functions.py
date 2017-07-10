@@ -64,7 +64,7 @@ def get_days(slots):
     :param slots:list of slots
     """
 
-    with open('../tt.json') as file_obj:
+    with open('attendance/tt.json') as file_obj:
         table = json.load(file_obj)
 
     days = list()
