@@ -1,9 +1,11 @@
+import dblink
+
 from pprint import pprint
 from fuzzywuzzy import fuzz
 import pymongo
 
 
-conn = pymongo.MongoClient('mongodb://chatbot-learn:qwerty1234@ds135592.mlab.com:35592/chatbot-learn')
+conn = pymongo.MongoClient(dblink.host)
 db = conn['chatbot-learn']
 col = db.ques
 
