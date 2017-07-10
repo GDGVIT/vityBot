@@ -32,4 +32,5 @@ for i in range(len(questions)):
 
     del doc
 
+coll.drop()
 coll.insert_many(list_docs)

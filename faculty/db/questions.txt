@@ -6,11 +6,11 @@ what is the room number of x_name
 
 room number of x: XX-XX
 
-when can i meet x_name / when is x_name open hours today
+when can i meet x_name / when is x_name open hours / when is x_name free today
 
 open hours of x_name: xx:xx AM - xx:xx PM
 
-when can i meet x_name / when is x_name open hours on x_day
+when can i meet x_name / when is x_name open hours / when is x_name free on x_day
 
 open hours of x_name on x_day: xx:xx AM - xx:xx PM
 
