@@ -1,6 +1,6 @@
+import attendance
 import dblink
 
-from pprint import pprint
 from fuzzywuzzy import fuzz
 import pymongo
 
@@ -32,18 +32,25 @@ def find_match(query):
     return doc
 
 
-key = ['x_day', 'x_class', 'x_days']
+key = ['x_day', 'x_class', 'x_days', 'x_classes']
 
 
-def get_response(matched_dbdata):
+def get_response(query):
     """
-
-    :param matched_dbdata: the data returned from db from the find_match function
     :return: apt response as string
     """
-    for i in key:
-        if i in matched_dbdata['question']:
-            # do stuff for calculation functions
-            return False
 
+    matched_dbdata = find_match(query)
+
+    # for i in key:
+    #     query = matched_dbdata['question']
+    #     print query
+    #
+    #     if i in query:
+    #         # do stuff for calculation functions
+    #         response = attendance.handle_query.process_query(user, query)
+    #
+    #         return response
+
+    # if answer is direct
     return matched_dbdata['answer']

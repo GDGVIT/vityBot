@@ -59,9 +59,16 @@ def get_response(keyword, course, user):
 
             for c in user.courses:
                 if c.attendance.isDebarred():
-                    li.append(str(c.course_code) + ' ' + str(c.attendance.attendance_percentage))
+                    li.append(str(c.course_code) + ' with ' + str(c.attendance.attendance_percentage))
 
-            return li
+            if len(li) == 0:
+                response = 'you are not debarred in any course'
+            else:
+                response = 'you are debarred in '
+                for i in li:
+                    response += i + ' '
+
+            return response
 
     if type(keyword) == list:
         if 'attendance' in keyword:

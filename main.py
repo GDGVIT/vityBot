@@ -1,4 +1,5 @@
 # script to test the interface
+import bot
 
 from attendance import get_data
 from attendance import string_functions
@@ -27,28 +28,7 @@ while True:
     if query == 'q':
         break
 
-    # dbdoc = find_DB.find_match(query)
-    # response = find_DB.get_response(dbdoc)
-    #
-    # course_reqd = string_functions.find_match(user.courses, query)
-    #
-    # if response and not course_reqd:
-    #     print
-    #     print response
-    #     print
-    #     continue
-    #
-    # print
-    #
-    # keyword = string_functions.get_keyword(query)
-    #
-    # response = handle_query.get_response(keyword, course_reqd, user)
-    #
-    # if response is None:
-    #     print 'can\'t get you'
-    # else:
-    #     print response
+    response = bot.chat(query)
 
-    response = handle_query.process_query(user, query)
 
     print response

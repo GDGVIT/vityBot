@@ -7,30 +7,34 @@ from tornado.httpclient import AsyncHTTPClient
 from tornado.gen import engine, Task, coroutine, Return
 # Other Libraries
 from motor import MotorClient
-from deep_match import deep_match
+# from deep_match import deep_match
+import bot
 
 # get url from qa repo
 # url = ..
-db = MotorClient(url)
+# db = MotorClient(url)
 # hyperparameters
 threshold = 0.8
 
 
 class MainHandler(RequestHandler):
-	@coroutine
-	def get(self):
-		# define your own question for test
-		question = self.get_argument('question')
-        
-		#confidence, question = deep_match(question)
-		# for now use your custom match we will replace 
-		# that once we are ready with the server
-		# if confidence >= threshold:
-			#return db.coll.find_one()
+    @coroutine
+    def get(self):
+        # define your own question for test
+
+        question = self.get_argument('question')
+        response = bot.chat(question)
+        self.write(response)
+
+        #confidence, question = deep_match(question)
+        # for now use your custom match we will replace
+        # that once we are ready with the server
+        # if confidence >= threshold:
+            #return db.coll.find_one()
 
 
 settings = dict(
-    db=db,
+    # db=db,
     debug=True
 )
 
