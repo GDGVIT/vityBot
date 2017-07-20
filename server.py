@@ -22,8 +22,10 @@ class MainHandler(RequestHandler):
 		#confidence, question = deep_match(question)
 		# for now use your custom match we will replace 
 		# that once we are ready with the server
-		if confidence >= threshold:
+		# if confidence >= threshold:
 			#return db.coll.find_one()
+
+
 
 settings = dict(
     db=db,

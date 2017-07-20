@@ -1,3 +1,5 @@
+import string_functions
+
 def get_response(keyword, faculty):
     """
     process the response
@@ -23,13 +25,12 @@ def get_response(keyword, faculty):
 
         # if data not present
         if len(faculty['open_hours']) == 0:
-            return "can't get requested data\n"
+            return "requested data unavailable\n"
 
         # if not free that day
         response += faculty['name'] + ' is not free on '
         response += keyword[1] + '\n'
         return response
-
 
     if keyword == 'room':
         response += faculty['name'] + "'s room : "
@@ -42,3 +43,15 @@ def get_response(keyword, faculty):
         response += faculty['email'] + '\n'
 
         return response
+
+
+def process_query(query):
+    faculty = string_functions.find_match(query)
+
+    if not faculty:
+        return None
+
+    keywords = string_functions.get_keyword(query)
+    response = get_response(keywords, faculty)
+
+    return response

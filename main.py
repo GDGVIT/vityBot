@@ -1,6 +1,8 @@
+# script to test the interface
+
 from attendance import get_data
-from attendance import student_info
 from attendance import string_functions
+from attendance import student_info
 from attendance import handle_query
 from db import find_DB
 
@@ -25,26 +27,28 @@ while True:
     if query == 'q':
         break
 
-    dbdoc = find_DB.find_match(query)
-    response = find_DB.get_response(dbdoc)
+    # dbdoc = find_DB.find_match(query)
+    # response = find_DB.get_response(dbdoc)
+    #
+    # course_reqd = string_functions.find_match(user.courses, query)
+    #
+    # if response and not course_reqd:
+    #     print
+    #     print response
+    #     print
+    #     continue
+    #
+    # print
+    #
+    # keyword = string_functions.get_keyword(query)
+    #
+    # response = handle_query.get_response(keyword, course_reqd, user)
+    #
+    # if response is None:
+    #     print 'can\'t get you'
+    # else:
+    #     print response
 
-    course_reqd = string_functions.find_match(user.courses, query)
+    response = handle_query.process_query(user, query)
 
-    if response and not course_reqd:
-        print
-        print response
-        print 
-        continue
-
-    print
-
-    keyword = string_functions.get_keyword(query)
-
-    response = handle_query.get_response(keyword, course_reqd, user)
-
-    if response is None:
-        print 'can\'t get you'
-    else:
-        print response
-
-    print
+    print response

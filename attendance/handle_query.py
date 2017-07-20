@@ -1,4 +1,5 @@
 import day_functions
+import string_functions
 
 
 def get_response(keyword, course, user):
@@ -153,3 +154,14 @@ def get_response(keyword, course, user):
             response = 'You are not debarred from the course ' + course.course_code
 
         return response
+
+
+def process_query(user, query):
+    course_reqd = string_functions.find_match(user.courses, query)
+    if not course_reqd:
+        return None
+
+    keyword = string_functions.get_keyword(query)
+    response = get_response(keyword, course_reqd, user)
+
+    return response

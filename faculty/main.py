@@ -1,19 +1,15 @@
+# scripts to test the interfaces
+
 import string_functions
 import handle_query
 
 
 inp = str()
 
-while inp != 'q':
+while True:
     inp = raw_input('>>')
+    if inp == 'q':
+        break
 
-    faculty = string_functions.find_match(inp)
-
-    if faculty is None:
-        print "can't get you"
-        continue
-
-    keywords = string_functions.get_keyword(inp)
-    response = handle_query.get_response(keywords, faculty)
-
+    response = handle_query.process_query(inp)
     print response
