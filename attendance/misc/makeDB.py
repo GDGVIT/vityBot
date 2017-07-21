@@ -2,7 +2,6 @@
 the script adds all data from the .npy files to the DB
 """
 
-
 import pymongo
 import numpy as np
 import json
@@ -11,7 +10,7 @@ import json
 writes list of question and answer from .npys to DB
 """
 
-conn = #host link here
+conn = None  # host link here
 db = conn['chatbot-learn']
 coll = db.ques
 
@@ -37,7 +36,6 @@ for i in range(len(questions)):
     f.write('\n')
     del doc
 
-
 # type 2
 
 f = open('testjsonfolder/db2.json', 'a')
@@ -58,4 +56,4 @@ for i in range(len(questions)):
     f.write('\n')
     del doc
 
-# coll.insert_many(list_docs)
+    # coll.insert_many(list_docs)

@@ -21,7 +21,6 @@ def find_match(query):
     max_ratio = 0
 
     for d in find_all(col):
-        d['q_type']
         ratio = fuzz.token_set_ratio(d['question'], query)
 
         if ratio > max_ratio:

@@ -37,12 +37,12 @@ def get_response(keyword, course, user):
                         res_list.append(c)
 
                 if len(res_list):
-                    response += '\nyou will be debarred in '
+                    response += ', you will be debarred in '
 
                     for c in res_list:
                         response += c.course_code + ', '
                 else:
-                    response += '\nyou won\'t be debarred in any courses'
+                    response += ', you won\'t be debarred in any courses'
 
                 return response
 
@@ -52,7 +52,11 @@ def get_response(keyword, course, user):
             for c in user.courses:
                 li.append(str(c.course_code) + ' ' + str(c.attendance.attendance_percentage))
 
-            return li
+            response = 'you are attendance: '
+            for i in li:
+                response += i + ' '
+
+            return response
 
         elif 'debarred' in keyword:
             li = list()
@@ -110,9 +114,9 @@ def get_response(keyword, course, user):
                 response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
 
                 if course.attendance.is_debarred(s):
-                    response += '\nYou will be debarred'
+                    response += ', You will be debarred'
                 else:
-                    response += '\nYou will not be debarred'
+                    response += ', You will not be debarred'
 
                 return response
 
@@ -140,9 +144,9 @@ def get_response(keyword, course, user):
                     response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
 
                     if course.attendance.is_debarred(s):
-                        response += '\nYou will be debarred'
+                        response += ', You will be debarred'
                     else:
-                        response += '\nYou will not be debarred'
+                        response += ', You will not be debarred'
 
                     return response
 

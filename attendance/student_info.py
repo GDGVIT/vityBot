@@ -127,6 +127,9 @@ class Student:
             c_slots = course['slot'].split('+')
             c_days = string_functions.get_days(c_slots)
 
+            if c_type == 'Embedded Lab' or c_type == 'Lab Only':
+                c_code += 'L'
+
             a_tc = course['attendance']['total_classes']
             a_ac = course['attendance']['attended_classes']
 
