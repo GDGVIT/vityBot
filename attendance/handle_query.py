@@ -33,7 +33,7 @@ def get_response(keyword, course, user):
                     s = c.attendance.miss_class_on(no_of_classes)
                     response += c.course_code + ' ' + str(s) + ', '
 
-                    if c.attendance.isDebarred(s):
+                    if c.attendance.is_debarred(s):
                         res_list.append(c)
 
                 if len(res_list):
@@ -58,7 +58,7 @@ def get_response(keyword, course, user):
             li = list()
 
             for c in user.courses:
-                if c.attendance.isDebarred():
+                if c.attendance.is_debarred():
                     li.append(str(c.course_code) + ' with ' + str(c.attendance.attendance_percentage))
 
             if len(li) == 0:
@@ -84,7 +84,7 @@ def get_response(keyword, course, user):
                 if keyword[1] is 'how':  # questions like 'how many more classes to attend'
                     cnt = 0
 
-                    while course.attendance.isDebarred(course.attendance.miss_next_class(cnt)):
+                    while course.attendance.is_debarred(course.attendance.miss_next_class(cnt)):
                         cnt += 1
 
                     if cnt:
@@ -109,7 +109,7 @@ def get_response(keyword, course, user):
 
                 response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
 
-                if course.attendance.isDebarred(s):
+                if course.attendance.is_debarred(s):
                     response += '\nYou will be debarred'
                 else:
                     response += '\nYou will not be debarred'
@@ -120,7 +120,7 @@ def get_response(keyword, course, user):
                 if keyword[1] is 'how':  # questions like 'how many more classes i can miss'
                     cnt = 0
 
-                    while not course.attendance.isDebarred(course.attendance.miss_next_class(cnt)):
+                    while not course.attendance.is_debarred(course.attendance.miss_next_class(cnt)):
                         cnt += 1
 
                     cnt -= 1
@@ -139,7 +139,7 @@ def get_response(keyword, course, user):
 
                     response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
 
-                    if course.attendance.isDebarred(s):
+                    if course.attendance.is_debarred(s):
                         response += '\nYou will be debarred'
                     else:
                         response += '\nYou will not be debarred'
@@ -155,7 +155,7 @@ def get_response(keyword, course, user):
         return response
 
     elif keyword is 'debarred':
-        if course.attendance.isDebarred():
+        if course.attendance.is_debarred():
             response = 'You are debarred from the course ' + course.course_code
         else:
             response = 'You are not debarred from the course ' + course.course_code

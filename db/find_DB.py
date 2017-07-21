@@ -18,14 +18,14 @@ def find_all(collection):
 def find_match(query):
     global col
     doc = None
-    max = 0
+    max_ratio = 0
 
-    # for d in col.find():
     for d in find_all(col):
+        d['q_type']
         ratio = fuzz.token_set_ratio(d['question'], query)
 
-        if ratio > max:
-            max = ratio
+        if ratio > max_ratio:
+            max_ratio = ratio
             doc = d
 
     del doc['_id']

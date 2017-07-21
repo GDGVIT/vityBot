@@ -11,7 +11,7 @@ import json
 writes list of question and answer from .npys to DB
 """
 
-conn = pymongo.MongoClient('mongodb://chatbot-learn:qwerty1234@ds135592.mlab.com:35592/chatbot-learn')
+conn = #host link here
 db = conn['chatbot-learn']
 coll = db.ques
 

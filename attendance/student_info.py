@@ -10,7 +10,7 @@ class Course:
     Course class containing data like code, title, type and attendance of a course
     """
 
-    def __init__(self, code, title, type, grade, names_list, days_list, attend):
+    def __init__(self, code, title, subject_type, grade, names_list, days_list, attend):
         """
         :param grade: cgpa, reqd to get min percent of the student
         :param names_list: list of possible names of the course
@@ -19,7 +19,7 @@ class Course:
         """
         self.course_code = code
         self.course_title = title
-        self.subject_type = type
+        self.subject_type = subject_type
         self.names = names_list
         self.days = days_list
 
@@ -65,7 +65,7 @@ class Attendance:
 
         return q
 
-    def isDebarred(self, attendance_percentage=None):
+    def is_debarred(self, attendance_percentage=None):
         if attendance_percentage is None:
             attendance_percentage = self.attendance_percentage
 

@@ -4,7 +4,7 @@ import json
 
 import os
 
-data = list()
+data = list()   # faculty data taken from output folder
 
 # should be replaced with VIT API
 # with open('db/output/data.json') as f:

@@ -22,7 +22,7 @@ class InvalidCredentials(Exception):
 def process_login(login_info):
     url = base + login
 
-    res = requests.post(url, login_info.getDict())
+    res = requests.post(url, login_info.get_dict())
 
     res_dict = res.json()
 
@@ -39,7 +39,7 @@ def get_course_details(login_info):
 
     process_login(login_info)
 
-    res = requests.post(url, login_info.getDict())
+    res = requests.post(url, login_info.get_dict())
 
     res_dict = res.json()
 

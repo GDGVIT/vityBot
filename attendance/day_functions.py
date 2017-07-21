@@ -7,6 +7,7 @@ def classes_between(day, course):
     """
     no of classes in between today and a given day for a course
     :param day: day in string
+    :param course: course object
     """
     count = 0
     day = weekdays.index(day)           # convert day in string to integer

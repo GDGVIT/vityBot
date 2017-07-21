@@ -3,6 +3,7 @@ import re
 
 r = re.compile('^[1-9]{2}[a-zA-Z]{3}[0-9]{4}$')
 
+
 class LoginDetails:
     """
     class stores info regarding username and password
@@ -18,7 +19,7 @@ class LoginDetails:
 
         self.psswd = getpass.getpass('Password: ')
 
-    def getDict(self):
+    def get_dict(self):
         q = dict()
 
         q['regNo'] = self.regid

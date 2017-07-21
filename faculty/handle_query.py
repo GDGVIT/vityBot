@@ -1,8 +1,10 @@
 import string_functions
 
+
 def get_response(keyword, faculty):
     """
     process the response
+    :param keyword: important keywords required
     :param faculty: faculty dictionary object
     :return:
     """
