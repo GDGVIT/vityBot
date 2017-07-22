@@ -21,28 +21,28 @@ def get_response(keyword, faculty):
             if i['day'] == day:
                 response += 'open hours of ' + faculty['name'] + ' on '
                 response += keyword[1] + ' : '
-                response += i['start_time'] + ' to ' + i['end_time'] + '\n'
+                response += i['start_time'] + ' to ' + i['end_time']
 
                 return response
 
         # if data not present
         if len(faculty['open_hours']) == 0:
-            return "requested data unavailable\n"
+            return "requested data unavailable"
 
         # if not free that day
         response += faculty['name'] + ' is not free on '
-        response += keyword[1] + '\n'
+        response += keyword[1]
         return response
 
     if keyword == 'room':
         response += faculty['name'] + "'s room : "
-        response += faculty['room'] + '\n'
+        response += faculty['room']
 
         return response
 
     if keyword == 'email':
         response += faculty['name'] + "'s email id : "
-        response += faculty['email'] + '\n'
+        response += faculty['email']
 
         return response
 

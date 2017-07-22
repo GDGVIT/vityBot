@@ -1,4 +1,5 @@
 import attendance
+import faculty
 import dblink
 
 from fuzzywuzzy import fuzz
@@ -34,22 +35,21 @@ def find_match(query):
 key = ['x_day', 'x_class', 'x_days', 'x_classes']
 
 
-def get_response(query):
+def get_response(query, user):
     """
     :return: apt response as string
     """
 
     matched_dbdata = find_match(query)
 
-    # for i in key:
-    #     query = matched_dbdata['question']
-    #     print query
-    #
-    #     if i in query:
-    #         # do stuff for calculation functions
-    #         response = attendance.handle_query.process_query(user, query)
-    #
-    #         return response
+    if matched_dbdata['type'] == 'faculty-calculation':
+        response = faculty.handle_query.process_query(query)
+        if response:
+            return response
 
-    # if answer is direct
+    if matched_dbdata['type'] == 'attendance-calculation':
+        response = attendance.handle_query.process_query(user, query)
+        if response:
+            return response
+
     return matched_dbdata['answer']

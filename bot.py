@@ -16,15 +16,15 @@ def chat(query):
         print e.message
         exit(1)
 
-    response = faculty.handle_query.process_query(query)
-    if response:
-        return response
+        # response = faculty.handle_query.process_query(query)
+        # if response:
+        #     return response
+        #
+        # response = attendance.handle_query.process_query(user, query)
+        # if response:
+        #     return response
 
-    response = attendance.handle_query.process_query(user, query)
-    if response:
-        return response
-
-    response = db.find_DB.get_response(query)
+    response = db.find_DB.get_response(query, user)
     if response:
         return response
 

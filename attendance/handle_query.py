@@ -52,7 +52,7 @@ def get_response(keyword, course, user):
             for c in user.courses:
                 li.append(str(c.course_code) + ' ' + str(c.attendance.attendance_percentage))
 
-            response = 'you are attendance: '
+            response = 'your attendance: '
             for i in li:
                 response += i + ' '
 
@@ -99,6 +99,9 @@ def get_response(keyword, course, user):
 
                 else:
                     day = keyword[1]
+                    if day not in course.days:
+                        return 'You don\'t have ' + course.course_code + ' classes that day'
+
                     no_of_classes = day_functions.classes_between(day, course)
                     s = course.attendance.attend_next_class(no_of_classes)
 
@@ -138,6 +141,9 @@ def get_response(keyword, course, user):
 
                 else:
                     day = keyword[1]
+                    if day not in course.days:
+                        return 'You don\'t have ' + course.course_code + ' classes that day'
+
                     no_of_classes = day_functions.classes_between(day, course)
                     s = course.attendance.miss_class_on(no_of_classes)
 
@@ -169,8 +175,8 @@ def get_response(keyword, course, user):
 
 def process_query(user, query):
     course_reqd = string_functions.find_match(user.courses, query)
-    if not course_reqd:
-        return None
+    # if not course_reqd:
+    #     return None
 
     keyword = string_functions.get_keyword(query)
     response = get_response(keyword, course_reqd, user)

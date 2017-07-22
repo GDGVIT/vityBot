@@ -22,7 +22,8 @@ class MainHandler(RequestHandler):
     def get(self):
         # define your own question for test
 
-        question = self.get_argument('question')
+        question = self.get_argument('question').rstrip()
+        print question
         response = bot.chat(question)
         self.write(response)
 
