@@ -13,7 +13,8 @@ def get_response(keyword, course, user):
 
     if not course:
         if type(keyword) == list:
-            if 'debarred' in keyword and type(keyword[1]) == str:  # if index 1 is a day of the week
+            if 'debarred' in keyword and type(keyword[1]) == str:
+                # if index 1 is a day of the week
                 """
                 queries relating to missing all classes in a day
                 """
@@ -50,7 +51,8 @@ def get_response(keyword, course, user):
 
         if 'attendance' in keyword:
             for c in user.courses:
-                li.append(str(c.course_code) + ' ' + str(c.attendance.attendance_percentage))
+                li.append(str(c.course_code) + ' ' +
+                          str(c.attendance.attendance_percentage))
 
             response = 'your attendance: '
             for i in li:
@@ -63,7 +65,8 @@ def get_response(keyword, course, user):
 
             for c in user.courses:
                 if c.attendance.is_debarred():
-                    li.append(str(c.course_code) + ' with ' + str(c.attendance.attendance_percentage))
+                    li.append(str(c.course_code) + ' with '
+                              + str(c.attendance.attendance_percentage))
 
             if len(li) == 0:
                 response = 'you are not debarred in any course'
@@ -76,19 +79,23 @@ def get_response(keyword, course, user):
 
     if type(keyword) == list:
         if 'attendance' in keyword:
-            if len(keyword) == 1 or type(keyword[1]) == int:  # if index 1 is no. of classes
+            if len(keyword) == 1 or type(keyword[1]) == int:
+                # if index 1 is no. of classes
                 n = keyword[1] if len(keyword) == 2 else 1
                 s = course.attendance.attend_next_class(n)
 
-                response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
+                response = 'You will have an attendance of '\
+                           + '%d in ' % s + course.course_code
 
                 return response
 
             elif type(keyword[1]) == str:  # if index 1 is a day of the week
-                if keyword[1] is 'how':  # questions like 'how many more classes to attend'
+                if keyword[1] is 'how':
+                    # questions like 'how many more classes to attend'
                     cnt = 0
 
-                    while course.attendance.is_debarred(course.attendance.miss_next_class(cnt)):
+                    while course.attendance.is_debarred(
+                            course.attendance.miss_next_class(cnt)):
                         cnt += 1
 
                     if cnt:
@@ -100,21 +107,25 @@ def get_response(keyword, course, user):
                 else:
                     day = keyword[1]
                     if day not in course.days:
-                        return 'You don\'t have ' + course.course_code + ' classes that day'
+                        return 'You don\'t have ' + course.course_code + \
+                               ' classes that day'
 
                     no_of_classes = day_functions.classes_between(day, course)
                     s = course.attendance.attend_next_class(no_of_classes)
 
-                    response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
+                    response = 'You will have an attendance of ' + \
+                               '%d in ' % s + course.course_code
 
                     return response
 
         elif 'debarred' in keyword:
-            if len(keyword) == 1 or type(keyword[1]) == int:  # if index 1 is no. of classes
+            if len(keyword) == 1 or type(keyword[1]) == int:
+                # if index 1 is no. of classes
                 n = keyword[1] if len(keyword) == 2 else 1
                 s = course.attendance.miss_next_class(n)
 
-                response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
+                response = 'You will have an attendance of ' + \
+                           '%d in ' % s + course.course_code
 
                 if course.attendance.is_debarred(s):
                     response += ', You will be debarred'
@@ -124,30 +135,36 @@ def get_response(keyword, course, user):
                 return response
 
             elif type(keyword[1]) == str:  # if index 1 is a day of the week
-                if keyword[1] is 'how':  # questions like 'how many more classes i can miss'
+                if keyword[1] is 'how':
+                    # questions like 'how many more classes i can miss'
                     cnt = 0
 
-                    while not course.attendance.is_debarred(course.attendance.miss_next_class(cnt)):
+                    while not course.attendance.is_debarred(
+                            course.attendance.miss_next_class(cnt)):
                         cnt += 1
 
                     cnt -= 1
 
                     if cnt:
-                        response = 'You can miss %d class(es)' % cnt + ' in %s' % course.course_code
+                        response = 'You can miss %d class(es)' % cnt\
+                                   + ' in %s' % course.course_code
                     else:
-                        response = 'You can\'t miss any class' + ' in %s' % course.course_code
+                        response = 'You can\'t miss any class' + \
+                                   ' in %s' % course.course_code
 
                     return response
 
                 else:
                     day = keyword[1]
                     if day not in course.days:
-                        return 'You don\'t have ' + course.course_code + ' classes that day'
+                        return 'You don\'t have ' + course.course_code +\
+                               ' classes that day'
 
                     no_of_classes = day_functions.classes_between(day, course)
                     s = course.attendance.miss_class_on(no_of_classes)
 
-                    response = 'You will have an attendance of ' + '%d in ' % s + course.course_code
+                    response = 'You will have an attendance of ' +\
+                               '%d in ' % s + course.course_code
 
                     if course.attendance.is_debarred(s):
                         response += ', You will be debarred'
@@ -166,9 +183,11 @@ def get_response(keyword, course, user):
 
     elif keyword is 'debarred':
         if course.attendance.is_debarred():
-            response = 'You are debarred from the course ' + course.course_code
+            response = 'You are debarred from the course '\
+                       + course.course_code
         else:
-            response = 'You are not debarred from the course ' + course.course_code
+            response = 'You are not debarred from the course '\
+                       + course.course_code
 
         return response
 

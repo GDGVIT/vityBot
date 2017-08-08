@@ -7,15 +7,17 @@ import json
 
 class Course:
     """
-    Course class containing data like code, title, type and attendance of a course
+    Course class containing data like code, title, type and
+     attendance of a course
     """
 
-    def __init__(self, code, title, subject_type, grade, names_list, days_list, attend):
+    def __init__(self, code, title, subject_type, grade,
+                 names_list, days_list, attend):
         """
         :param grade: cgpa, reqd to get min percent of the student
         :param names_list: list of possible names of the course
         :param days_list: list of days where the classes are conducted
-        :param attend: pass list of 2 values corresponding to attended and total classes
+        :param attend: pass list of 2 values - attended and total classes
         """
         self.course_code = code
         self.course_title = title
@@ -27,7 +29,8 @@ class Course:
 
         if grade >= 9:
             self.attendance.minimum_percentage_required = 0
-        if self.subject_type == 'Lab Only' or self.subject_type == 'Embedded Lab':
+        if self.subject_type == 'Lab Only' or \
+                        self.subject_type == 'Embedded Lab':
             self.attendance.attendance_units = 2
 
     def get_dict(self):
@@ -54,7 +57,8 @@ class Attendance:
         self.attended_classes = attended
         self.total_classes = total
 
-        self.attendance_percentage = int(math.ceil(float(self.attended_classes) / self.total_classes * 100))
+        self.attendance_percentage = int(math.ceil(
+            float(self.attended_classes) / self.total_classes * 100))
 
     def get_dict(self):
         q = dict()
@@ -78,14 +82,17 @@ class Attendance:
         return False
 
     def attend_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil(float(self.attended_classes + no_of_classes * self.attendance_units) /
-                                   (self.total_classes + no_of_classes * self.attendance_units) * 100)
+        new_percentage = math.ceil(float(self.attended_classes + no_of_classes
+                                         * self.attendance_units) /
+                                   (self.total_classes + no_of_classes *
+                                    self.attendance_units) * 100)
 
         return int(new_percentage)
 
     def miss_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil(float(self.attended_classes) / (self.total_classes + no_of_classes
-                                                                   * self.attendance_units) * 100)
+        new_percentage = math.ceil(float(self.attended_classes) /
+                                   (self.total_classes + no_of_classes
+                                    * self.attendance_units) * 100)
 
         return int(new_percentage)
 
@@ -94,8 +101,10 @@ class Attendance:
         percentage if missed nth class from today
         :param no_of_classes:(n)
         """
-        new_percentage = math.ceil(float(self.attended_classes + (no_of_classes - 1) * self.attendance_units) /
-                                   (self.total_classes + no_of_classes * self.attendance_units) * 100)
+        new_percentage = math.ceil(float(self.attended_classes +
+                                (no_of_classes - 1) * self.attendance_units) /
+                                (self.total_classes + no_of_classes *
+                                 self.attendance_units) * 100)
 
         return int(new_percentage)
 
@@ -110,7 +119,7 @@ class Student:
         #
         # res = get_data.get_course_details(login_info)
 
-        with open('attendance/ffcs.json') as f:    # temp json file
+        with open('attendance/ffcs.json') as f:  # temp json file
             res = json.load(f)
 
         self.name = res['name']
@@ -136,5 +145,6 @@ class Student:
             if a_tc == 0:  # prevent ZeroDivisionError
                 continue
 
-            temp = Course(c_code, c_title, c_type, self.grade, c_names, c_days, [a_ac, a_tc])
+            temp = Course(c_code, c_title, c_type, self.grade,
+                          c_names, c_days, [a_ac, a_tc])
             self.courses.append(temp)

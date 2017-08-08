@@ -1,6 +1,7 @@
 from datetime import datetime
 
-weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday',
+            'saturday', 'sunday']
 
 
 def classes_between(day, course):
@@ -28,4 +29,3 @@ def classes_between(day, course):
         count += 1
 
     return count
-

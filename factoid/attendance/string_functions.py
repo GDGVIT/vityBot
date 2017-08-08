@@ -32,7 +32,7 @@ def find_match(course_list, query_string):
     :return: course object
     """
 
-    max_out = 0     # the max ratio among the courses
+    max_out = 0  # the max ratio among the courses
     max_course = None
 
     for course in course_list:
@@ -89,18 +89,20 @@ def get_keyword(query):
     attend = ['go', 'attend']
     miss = ['miss', 'skip', 'don\'t', 'bunk']
 
-    # code to check if queries regarding attendance over a few classes are asked
+    # code to check queries regarding attendance over a few classes
     li = list()
-    flag = False                # flag for checking if digit/day follows the keywords reqd(attend/miss) in li
+    flag = False  # flag for checking if digit/day follows
+    #  the keywords reqd(attend/miss) in li
+
     for s in query.split(' '):
-        if s.isdigit():         # push no of classes if it exist to index 1
+        if s.isdigit():  # push no of classes if it exist to index 1
             if flag:
                 li.append(int(s))
                 break
 
         elif s in day_functions.weekdays:
             if flag:
-                li.append(s)    # push the week of day if it exist to index 1 of li
+                li.append(s)  # push the week of day to index 1 of li
                 break
 
         if s in miss:
@@ -116,7 +118,8 @@ def get_keyword(query):
     if 'how' in query:
         li.append('how')
 
-    if len(li) == 1 or len(li) == 2:    # list can't have values other than 1 and 2
+    if len(li) == 1 or len(li) == 2:
+        # list can't have values other than 1 and 2
         return li
 
     if 'attendance' in query:
