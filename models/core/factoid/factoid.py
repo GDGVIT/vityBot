@@ -1,13 +1,25 @@
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import string
-from globals import *
+from modules import *
 StopWords = set(stopwords.words('english'))
 
 
-def kw_match(query):
+def factoid(query):
+    '''
+    Example-
+    -------
+    >>> factoid('best clubs in vit')
 
-    # remove punctuations, stop words and stem it
+    Parameters:
+    ----------
+
+       input:
+       question: string
+
+       output:
+       confidence, answer or None
+    '''
     query = query.translate(None, string.punctuation)
     tokens = [SnowballStemmer('english').stem(token)
               for token in query.split() if token not in StopWords]
