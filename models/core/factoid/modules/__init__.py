@@ -1,7 +1,7 @@
 """
- this file imports all the other modules which answer
+ this package imports all the other sub-packages which answer
  factoid based questions
- put all your modules inside the factoid folder
+ put all your packages inside the modules folder
 
     module schema:
         input: question, tokens(optional)
@@ -30,9 +30,9 @@ def attendance(question, tokens=None):
 def clubs_chapters(question, tokens=None):
     return (0.8, 'got the question')
 
+
 att_kw_list = ['bunk', 'attendance']
 clubs_kw_list = ['club', 'chapter']
-
 
 keywords = dict(
                 attendance=att_kw_list,
