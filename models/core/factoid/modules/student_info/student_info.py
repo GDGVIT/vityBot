@@ -11,7 +11,7 @@ class Course:
      attendance of a course
     """
 
-    def __init__(self, code, title, subject_type, grade,
+    def __init__(self, code, title, subject_type, grade, slots,
                  names_list, days_list, attend):
         """
         :param grade: cgpa, reqd to get min percent of the student
@@ -24,6 +24,7 @@ class Course:
         self.subject_type = subject_type
         self.names = names_list
         self.days = days_list
+        self.slots = slots
 
         self.attendance = Attendance(attend[0], attend[1])
 
@@ -109,6 +110,19 @@ class Attendance:
         return int(new_percentage)
 
 
+class Timetable:
+    """
+    contains the timetable and some handy methods
+
+    """
+
+    def __init__(self):
+        # TODO create dict each weekday mapping to time intervals
+        # TODO set time intervals for labs differently
+
+    # TODO methods - current, next class
+
+
 class Student:
     """
     class containing data relating to courses and some personal info
@@ -145,6 +159,6 @@ class Student:
             if a_tc == 0:  # prevent ZeroDivisionError
                 continue
 
-            temp = Course(c_code, c_title, c_type, self.grade,
+            temp = Course(c_code, c_title, c_type, self.grade, c_slots,
                           c_names, c_days, [a_ac, a_tc])
             self.courses.append(temp)

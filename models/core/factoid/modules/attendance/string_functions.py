@@ -12,6 +12,7 @@ def get_names(course_dict):
     li = list()
 
     li.append(course_dict['course_code'])
+    li.append(course_dict['course_code'][:3])
     li.append(course_dict['course_title'])
 
     name = str()
