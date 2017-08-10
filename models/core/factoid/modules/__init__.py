@@ -31,7 +31,6 @@ def clubs_chapters(question, tokens=None):
     return (0.8, 'got the question')
 
 
-<<<<<<< HEAD:factoid/globals.py
 # all keywords include all the days of the week
 att_kw_list = ['attendance', 'debarred', 'bunk', 'miss',
                'skip', 'don\'t', 'go', 'attend', 'how']
@@ -39,9 +38,6 @@ att_kw_list = ['attendance', 'debarred', 'bunk', 'miss',
 fac_kw_list = ['room', 'cabin', 'mail', 'email', 'meet',
                'open', 'free']
 
-=======
-att_kw_list = ['bunk', 'attendance']
->>>>>>> master:models/core/factoid/modules/__init__.py
 clubs_kw_list = ['club', 'chapter']
 
 keywords = dict(

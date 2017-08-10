@@ -201,3 +201,5 @@ def process_query(user, query):
     response = get_response(keyword, course_reqd, user)
 
     return response
+
+# TODO 'can i bunk mat2002 lab on monday' not accurate

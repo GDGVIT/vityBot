@@ -1,6 +1,7 @@
+import attendance
+import faculty
 import dblink
 
-from pprint import pprint
 from fuzzywuzzy import fuzz
 import pymongo
 
@@ -18,32 +19,37 @@ def find_all(collection):
 def find_match(query):
     global col
     doc = None
-    max = 0
+    max_ratio = 0
 
-    # for d in col.find():
     for d in find_all(col):
         ratio = fuzz.token_set_ratio(d['question'], query)
 
-        if ratio > max:
-            max = ratio
+        if ratio > max_ratio:
+            max_ratio = ratio
             doc = d
 
     del doc['_id']
     return doc
 
 
-key = ['x_day', 'x_class', 'x_days']
+key = ['x_day', 'x_class', 'x_days', 'x_classes']
 
 
-def get_response(matched_dbdata):
+def get_response(query, user):
     """
-
-    :param matched_dbdata: the data returned from db from the find_match function
     :return: apt response as string
     """
-    for i in key:
-        if i in matched_dbdata['question']:
-            # do stuff for calculation functions
-            return False
+
+    matched_dbdata = find_match(query)
+
+    if matched_dbdata['type'] == 'faculty-calculation':
+        response = faculty.handle_query.process_query(query)
+        if response:
+            return response
+
+    if matched_dbdata['type'] == 'attendance-calculation':
+        response = attendance.handle_query.process_query(user, query)
+        if response:
+            return response
 
     return matched_dbdata['answer']

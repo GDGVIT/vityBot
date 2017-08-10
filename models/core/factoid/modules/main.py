@@ -1,9 +1,9 @@
 # script to test the interface
 import bot
 
-from attendance import get_data
+from student_info import get_data
 from attendance import string_functions
-from attendance import student_info
+from student_info import student_info
 from attendance import handle_query
 from db import find_DB
 
