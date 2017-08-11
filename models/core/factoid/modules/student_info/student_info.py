@@ -1,6 +1,7 @@
 import get_data
 import login_credentials
 from attendance import string_functions
+import timetable
 import math
 import json
 
@@ -116,11 +117,20 @@ class Timetable:
 
     """
 
-    def __init__(self):
-        # TODO create dict each weekday mapping to time intervals
-        # TODO set time intervals for labs differently
+    def __init__(self, course_list):
+        self.tt = timetable.generate(course_list)
 
-    # TODO methods - current, next class
+    def show(self):
+        days = self.tt.keys()
+        out = dict()
+
+        for day in days:
+            out[day] = []
+            for i in self.tt[day]:
+                out[day].append([i[0].course_code, i[1]])
+
+        from pprint import pprint
+        pprint(out)
 
 
 class Student:
@@ -162,3 +172,5 @@ class Student:
             temp = Course(c_code, c_title, c_type, self.grade, c_slots,
                           c_names, c_days, [a_ac, a_tc])
             self.courses.append(temp)
+
+        self.timetable = Timetable(self.courses)
