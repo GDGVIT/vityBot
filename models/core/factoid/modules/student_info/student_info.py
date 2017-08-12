@@ -2,8 +2,11 @@ import get_data
 import login_credentials
 from attendance import string_functions
 import timetable
+
 import math
 import json
+from datetime import time
+from datetime import datetime
 
 
 class Course:
@@ -104,11 +107,15 @@ class Attendance:
         :param no_of_classes:(n)
         """
         new_percentage = math.ceil(float(self.attended_classes +
-                                (no_of_classes - 1) * self.attendance_units) /
-                                (self.total_classes + no_of_classes *
-                                 self.attendance_units) * 100)
+                                         (no_of_classes - 1) * self.attendance_units) /
+                                   (self.total_classes + no_of_classes *
+                                    self.attendance_units) * 100)
 
         return int(new_percentage)
+
+
+course = 0
+duration = 1
 
 
 class Timetable:
@@ -127,10 +134,89 @@ class Timetable:
         for day in days:
             out[day] = []
             for i in self.tt[day]:
-                out[day].append([i[0].course_code, i[1]])
+                out[day].append([i[course].course_code, i[duration]])
 
         from pprint import pprint
         pprint(out)
+
+    @staticmethod
+    def _is_between(check_time, start_time, end_time):
+        """
+        check if a given time is between an interval
+        :param check_time:
+        :param start_time:
+        :param end_time:
+        :return:
+        """
+        if start_time.hour < check_time.hour < end_time.hour:
+            return True
+        elif check_time.hour == start_time.hour and check_time.hour < end_time.hour:
+            return check_time.minute >= start_time.minute
+        elif check_time.hour > start_time.hour and check_time.hour == end_time.hour:
+            return check_time.minute <= end_time.minute
+        elif check_time.hour == start_time.hour and check_time.hour == end_time.hour:
+            return start_time.minute <= check_time.minute <= end_time.minute
+        else:
+            return False
+
+    @staticmethod
+    def _is_before(check_time, start_time):
+        if check_time.hour < start_time.hour:
+            return True
+        elif check_time.hour == start_time.hour:
+            return check_time.minute < start_time.minute
+        else:
+            return False
+
+    def current_class(self, time):
+        """
+        get the class in a given time
+        :param time: datetime.time object
+        :return: course
+        """
+        # day = datetime.now().weekday()
+        day = datetime(2017, 8, 11).weekday()  # temporary i'm working in a weekend:P
+        weekdays = ['monday', 'tuesday', 'wednesday',
+                    'thursday', 'friday']
+        courses = self.all_classes(weekdays[day])
+
+        for c in courses:
+            if self._is_between(time, *c[duration]):
+                return c[course]
+        return None
+
+    def next_class(self, time):
+        """
+        get the class next to a given time
+        :param time: datetime.time object
+        :return: [course, course time]
+        """
+        # day = datetime.now().weekday()
+        day = datetime(2017, 8, 11).weekday()  # temporary i'm working in a weekend:P
+
+        weekdays = ['monday', 'tuesday', 'wednesday',
+                    'thursday', 'friday']
+        courses = self.all_classes(weekdays[day])
+
+        for c in courses:
+            if self._is_before(time, c[duration][0]):
+                return c
+        return None
+
+    def all_classes(self, weekday):
+        """
+        all the classes in a given weekday
+        :return: [[course, time], ...]
+        """
+        weekdays = ['monday', 'tuesday', 'wednesday',
+                    'thursday', 'friday']
+
+        if weekday not in weekdays:
+            return None
+        # sort by time before return
+        out = self.tt[weekday]
+        out.sort(key=lambda x: x[1][0].hour)
+        return out
 
 
 class Student:

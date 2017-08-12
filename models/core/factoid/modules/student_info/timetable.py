@@ -10,6 +10,7 @@ import json
 def generate(course_list):
     """
     generate time table from list of course objects
+    the time intervals are patterns in the general timetable
     :param course_list:
     :return: dict with weekdays and corresponding classes with time interval
     """
@@ -17,7 +18,7 @@ def generate(course_list):
     def get_time(index, c_type):
         """
         get
-        :param index: index of cell from the table data
+        :param index: index of cell from the table data(tt.json)
         :param c_type: type of course
         :return: time interval of the class in list of datetime.time obj
         """
@@ -64,7 +65,7 @@ def generate(course_list):
     output = dict(monday=[], tuesday=[], wednesday=[], thursday=[], friday=[])
 
     with open('student_info/tt.json') as f:
-        tt = json.load(f)
+        tt = json.load(f)   # use general timetable
 
     days = tt.keys()
     total_cols = 14

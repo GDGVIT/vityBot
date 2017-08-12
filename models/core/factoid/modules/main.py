@@ -17,7 +17,6 @@ except get_data.LoginError as e:
     print e.message
     exit(1)
 
-print
 
 print 'Hi ' + user.name + '! What do you want me to do?'
 
