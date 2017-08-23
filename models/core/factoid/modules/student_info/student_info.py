@@ -174,8 +174,7 @@ class Timetable:
         :param time: datetime.time object
         :return: course
         """
-        # day = datetime.now().weekday()
-        day = datetime(2017, 8, 11).weekday()  # temporary i'm working in a weekend:P
+        day = datetime.now().weekday()
         weekdays = ['monday', 'tuesday', 'wednesday',
                     'thursday', 'friday']
         courses = self.all_classes(weekdays[day])
@@ -191,9 +190,7 @@ class Timetable:
         :param time: datetime.time object
         :return: [course, course time]
         """
-        # day = datetime.now().weekday()
-        day = datetime(2017, 8, 11).weekday()  # temporary i'm working in a weekend:P
-
+        day = datetime.now().weekday()
         weekdays = ['monday', 'tuesday', 'wednesday',
                     'thursday', 'friday']
         courses = self.all_classes(weekdays[day])

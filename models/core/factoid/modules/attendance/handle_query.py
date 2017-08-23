@@ -6,7 +6,7 @@ def get_response(keyword, course, user):
     """
     process the response
     :param keyword: the keyword in the query
-    :param course: course object
+    :param course: course object - found from query
     :param user: student object
     :return: response  as string
     """

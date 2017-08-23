@@ -1,5 +1,6 @@
 import attendance
 import faculty
+import timetable.handle_query
 import dblink
 
 from fuzzywuzzy import fuzz
@@ -49,6 +50,11 @@ def get_response(query, user):
 
     if matched_dbdata['type'] == 'attendance-calculation':
         response = attendance.handle_query.process_query(user, query)
+        if response:
+            return response
+
+    if matched_dbdata['type'] == 'timetable-calculation':
+        response = timetable.handle_query.process_query(user, query)
         if response:
             return response
 
