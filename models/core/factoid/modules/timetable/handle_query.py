@@ -32,6 +32,23 @@ def get_response(keyword, user):
 
             return response
 
+        elif keyword[1] == 'tomorrow':
+            day = datetime.now().weekday() + 1
+            day = weekdays[day]
+
+            if not day:
+                return 'You don\'t have any classes that day'
+
+            classes = user.timetable.all_classes(day)
+            response = 'you have '
+
+            for i in classes:
+                response += i[course_index].course_code + ' at ' + \
+                            str(i[time_index][0].hour) + ':' + \
+                            str(i[time_index][0].minute) + ', '
+
+            return response
+
         elif keyword[1] == 'end':
             day = datetime.now().weekday()
             day = weekdays[day]
@@ -42,7 +59,7 @@ def get_response(keyword, user):
             classes = user.timetable.all_classes(day)
             end_time = classes[-1][time_index][1]
             response = 'your day ends at ' + str(end_time.hour) + \
-                        ':' + str(end_time.minute)
+                       ':' + str(end_time.minute)
 
             return response
 
@@ -72,11 +89,10 @@ def get_response(keyword, user):
 
             cls = user.timetable.next_class(time)
             response = 'your next class is ' + cls[course_index].course_code\
-                        + ' at ' + str(cls[time_index][0].hour) + ':'\
-                        + str(cls[time_index][0].minute)
+                       + ' at ' + str(cls[time_index][0].hour) + ':'\
+                       + str(cls[time_index][0].minute)
 
             return response
-
 
 
 def process_query(user, query):

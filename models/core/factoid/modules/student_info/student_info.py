@@ -35,7 +35,7 @@ class Course:
         if grade >= 9:
             self.attendance.minimum_percentage_required = 0
         if self.subject_type == 'Lab Only' or \
-                        self.subject_type == 'Embedded Lab':
+           self.subject_type == 'Embedded Lab':
             self.attendance.attendance_units = 2
 
     def get_dict(self):
@@ -87,17 +87,18 @@ class Attendance:
         return False
 
     def attend_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil(float(self.attended_classes + no_of_classes
-                                         * self.attendance_units) /
+        new_percentage = math.ceil(float(
+            self.attended_classes + no_of_classes * self.attendance_units) /
                                    (self.total_classes + no_of_classes *
                                     self.attendance_units) * 100)
 
         return int(new_percentage)
 
     def miss_next_class(self, no_of_classes=1):
-        new_percentage = math.ceil(float(self.attended_classes) /
-                                   (self.total_classes + no_of_classes
-                                    * self.attendance_units) * 100)
+        new_percentage = math.ceil(
+            float(self.attended_classes) /
+            (self.total_classes + no_of_classes *
+             self.attendance_units) * 100)
 
         return int(new_percentage)
 
@@ -107,7 +108,8 @@ class Attendance:
         :param no_of_classes:(n)
         """
         new_percentage = math.ceil(float(self.attended_classes +
-                                         (no_of_classes - 1) * self.attendance_units) /
+                                   (no_of_classes - 1) *
+                                         self.attendance_units) /
                                    (self.total_classes + no_of_classes *
                                     self.attendance_units) * 100)
 
@@ -150,11 +152,14 @@ class Timetable:
         """
         if start_time.hour < check_time.hour < end_time.hour:
             return True
-        elif check_time.hour == start_time.hour and check_time.hour < end_time.hour:
+        elif check_time.hour == start_time.hour and check_time.hour < \
+                end_time.hour:
             return check_time.minute >= start_time.minute
-        elif check_time.hour > start_time.hour and check_time.hour == end_time.hour:
+        elif check_time.hour > start_time.hour and check_time.hour == \
+                end_time.hour:
             return check_time.minute <= end_time.minute
-        elif check_time.hour == start_time.hour and check_time.hour == end_time.hour:
+        elif check_time.hour == start_time.hour and check_time.hour == \
+                end_time.hour:
             return start_time.minute <= check_time.minute <= end_time.minute
         else:
             return False

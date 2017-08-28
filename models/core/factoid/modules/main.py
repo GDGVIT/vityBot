@@ -29,5 +29,4 @@ while True:
 
     response = bot.chat(query)
 
-
     print response

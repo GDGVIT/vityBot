@@ -73,7 +73,7 @@ def get_days(slots):
     for slot in slots:
         for day in table.keys():
             if slot in table[day]:
-                if day not in days: # prevent duplicates
+                if day not in days:  # prevent duplicates
                     days.append(day)
 
     return days
