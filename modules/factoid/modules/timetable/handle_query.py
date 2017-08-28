@@ -2,6 +2,16 @@ import string_functions
 from datetime import datetime
 
 
+def leadzero(val):
+    """
+    add leading zeros to single digit hours and minutes
+    :param val: integer
+    :return: string with leading zero
+    """
+    s = '%02d' % (val)
+    return s
+
+
 def get_response(keyword, user):
     """
 
@@ -27,8 +37,25 @@ def get_response(keyword, user):
 
             for i in classes:
                 response += i[course_index].course_code + ' at ' + \
-                            str(i[time_index][0].hour) + ':' +\
-                            str(i[time_index][0].minute) + ', '
+                            leadzero(i[time_index][0].hour) + ':' +\
+                            leadzero(i[time_index][0].minute) + ', '
+
+            return response
+
+        elif keyword[1] == 'tomorrow':
+            day = datetime.now().weekday() + 1
+            day = weekdays[day]
+
+            if not day:
+                return 'You don\'t have any classes that day'
+
+            classes = user.timetable.all_classes(day)
+            response = 'you have '
+
+            for i in classes:
+                response += i[course_index].course_code + ' at ' + \
+                            leadzero(i[time_index][0].hour) + ':' + \
+                            leadzero(i[time_index][0].minute) + ', '
 
             return response
 
@@ -41,8 +68,8 @@ def get_response(keyword, user):
 
             classes = user.timetable.all_classes(day)
             end_time = classes[-1][time_index][1]
-            response = 'your day ends at ' + str(end_time.hour) + \
-                        ':' + str(end_time.minute)
+            response = 'your day ends at ' + leadzero(end_time.hour) + \
+                       ':' + leadzero(end_time.minute)
 
             return response
 
@@ -57,13 +84,16 @@ def get_response(keyword, user):
             time = day.time()
 
             cls = user.timetable.current_class(time)
-            response = 'your current class is ' + cls.course_code
+            if cls:
+                response = 'your current class is ' + cls.course_code
+            else:
+                response = 'you don\'t have any class right now'
 
             return response
 
         elif keyword[1] == 'next':
             # time = datetime.now()
-            day = datetime(2017, 8, 24, 14)
+            day = datetime(2017, 8, 28, 14)
 
             if not day:
                 return 'You don\'t have any classes that day'
@@ -71,12 +101,15 @@ def get_response(keyword, user):
             time = day.time()
 
             cls = user.timetable.next_class(time)
-            response = 'your next class is ' + cls[course_index].course_code\
-                        + ' at ' + str(cls[time_index][0].hour) + ':'\
-                        + str(cls[time_index][0].minute)
+            if cls:
+                response = 'your next class is '\
+                           + cls[course_index].course_code\
+                           + ' at ' + leadzero(cls[time_index][0].hour) + ':'\
+                           + leadzero(cls[time_index][0].minute)
+            else:
+                response = 'you don\'t have any class'
 
             return response
-
 
 
 def process_query(user, query):

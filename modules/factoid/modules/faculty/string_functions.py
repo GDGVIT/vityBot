@@ -49,7 +49,8 @@ def get_keyword(query):
             return 'email'
 
     open_hours_keys = ['meet', 'open', 'free']
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    days = ['monday', 'tuesday', 'wednesday', 'thursday',
+            'friday', 'saturday', 'sunday']
 
     for key in open_hours_keys:
         if key in query:

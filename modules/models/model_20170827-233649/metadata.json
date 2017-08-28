@@ -1,0 +1,16 @@
+{
+    "trained_at": "20170827-233649", 
+    "pipeline": [
+        "nlp_spacy", 
+        "tokenizer_spacy", 
+        "ner_crf", 
+        "ner_spacy", 
+        "intent_featurizer_spacy", 
+        "intent_classifier_sklearn"
+    ], 
+    "entity_extractor_crf": null, 
+    "spacy_model_name": "en", 
+    "language": "en", 
+    "intent_classifier_sklearn": "intent_classifier.pkl", 
+    "rasa_nlu_version": "0.9.2"
+}
