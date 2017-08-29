@@ -1,12 +1,14 @@
 from datetime import datetime
 
-weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday',
+            'saturday', 'sunday']
 
 
 def classes_between(day, course):
     """
     no of classes in between today and a given day for a course
     :param day: day in string
+    :param course: course object
     """
     count = 0
     day = weekdays.index(day)           # convert day in string to integer
@@ -27,4 +29,3 @@ def classes_between(day, course):
         count += 1
 
     return count
-
