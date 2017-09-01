@@ -1,0 +1,23 @@
+what classes do i have today
+
+you have ... today (with time)
+
+what classes do i have tomorrow
+
+you have ...
+
+what is the class now
+
+your current class is ...
+
+what is my current class
+
+your current class is ...
+
+what is my next class
+
+your next class is ...
+
+when do my classes end
+
+your class ends at ..

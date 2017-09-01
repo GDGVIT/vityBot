@@ -31,11 +31,18 @@ def clubs_chapters(question, tokens=None):
     return (0.8, 'got the question')
 
 
-att_kw_list = ['bunk', 'attendance']
+# all keywords include all the days of the week
+att_kw_list = ['attendance', 'debarred', 'bunk', 'miss',
+               'skip', 'don\'t', 'go', 'attend', 'how']
+
+fac_kw_list = ['room', 'cabin', 'mail', 'email', 'meet',
+               'open', 'free']
+
 clubs_kw_list = ['club', 'chapter']
 
 keywords = dict(
                 attendance=att_kw_list,
+                faculty=fac_kw_list,
                 clubs_chapters=clubs_kw_list
 )
 modules = keywords.keys()

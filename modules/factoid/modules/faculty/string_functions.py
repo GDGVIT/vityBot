@@ -2,10 +2,13 @@ from fuzzywuzzy import fuzz
 
 import json
 
-data = list()
+import os
+
+data = list()   # faculty data taken from output folder
 
 # should be replaced with VIT API
-with open('db/output/data.json') as f:
+# with open('db/output/data.json') as f:
+with open(os.getcwd() + '/faculty/db/output/data.json') as f:
     data = json.load(f)
 
 
@@ -36,7 +39,7 @@ def get_keyword(query):
     :param query: query string
     """
 
-    if 'room' in query:
+    if ('room' in query) or ('cabin' in query):
         return 'room'
 
     email_keys = ['mail', 'email']
@@ -46,7 +49,8 @@ def get_keyword(query):
             return 'email'
 
     open_hours_keys = ['meet', 'open', 'free']
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    days = ['monday', 'tuesday', 'wednesday', 'thursday',
+            'friday', 'saturday', 'sunday']
 
     for key in open_hours_keys:
         if key in query:
