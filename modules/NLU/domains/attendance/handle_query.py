@@ -92,7 +92,7 @@ def get_response(keyword, course, user):
 
             elif type(keyword[1]) == str:  # if index 1 is a day of the week
                 if keyword[1] is 'how':
-                    # questions like 'how many more classes to attend'
+                    # questions like 'how many more classes to attend
                     cnt = 0
 
                     while course.attendance.is_debarred(
@@ -137,7 +137,7 @@ def get_response(keyword, course, user):
 
             elif type(keyword[1]) == str:  # if index 1 is a day of the week
                 if keyword[1] is 'how':
-                    # questions like 'how many more classes i can miss'
+                    # questions like 'how many more classes can i miss'
                     cnt = 0
 
                     while not course.attendance.is_debarred(
@@ -146,7 +146,7 @@ def get_response(keyword, course, user):
 
                     cnt -= 1
 
-                    if cnt:
+                    if cnt > 0:
                         response = 'You can miss %d class(es)' % cnt \
                                    + ' in %s' % course.course_code
                     else:
@@ -202,5 +202,3 @@ def process_query(user, query):
     response = get_response(keyword, course_reqd, user)
 
     return response
-
-# TODO 'can i bunk mat2002 lab on monday' not accurate

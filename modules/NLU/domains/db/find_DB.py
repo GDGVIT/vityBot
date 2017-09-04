@@ -1,14 +1,14 @@
+import env
+
 import attendance
 import faculty
 import timetable.handle_query
-import dblink
-
 from fuzzywuzzy import fuzz
 import pymongo
 
-
-conn = pymongo.MongoClient(dblink.host)
-db = conn['chatbot-learn']
+host = env.host
+conn = pymongo.MongoClient(host)
+db = conn['vitybot']
 col = db.ques
 
 
@@ -36,26 +36,26 @@ def find_match(query):
 key = ['x_day', 'x_class', 'x_days', 'x_classes']
 
 
-def get_response(query, user):
+def get_response(query, intent, user):
     """
     :return: apt response as string
     """
 
-    matched_dbdata = find_match(query)
+    # matched_dbdata = find_match(query)
 
-    if matched_dbdata['type'] == 'faculty-calculation':
+    if intent == 'faculty-calculation':
         response = faculty.handle_query.process_query(query)
         if response:
             return response
 
-    if matched_dbdata['type'] == 'attendance-calculation':
+    if intent == 'attendance-calculation':
         response = attendance.handle_query.process_query(user, query)
         if response:
             return response
 
-    if matched_dbdata['type'] == 'timetable-calculation':
+    if intent == 'timetable-calculation':
         response = timetable.handle_query.process_query(user, query)
         if response:
             return response
 
-    return matched_dbdata['answer']
+    # return matched_dbdata['answer']

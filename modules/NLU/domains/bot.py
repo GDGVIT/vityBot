@@ -5,7 +5,7 @@ import faculty.handle_query
 import db.find_DB
 
 
-def chat(query):
+def chat(query, intent):
     try:
         user = student_info.student_info.Student()
 
@@ -24,7 +24,8 @@ def chat(query):
         # if response:
         #     return response
 
-    response = db.find_DB.get_response(query, user)
+
+    response = db.find_DB.get_response(query, intent, user)
     if response:
         return response
 
