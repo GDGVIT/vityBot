@@ -1,15 +1,15 @@
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import string
-from modules import *
+from domains import *
 StopWords = set(stopwords.words('english'))
 
 
-def factoid(query):
+def kw_match(query):
     '''
     Example-
     -------
-    >>> factoid('best clubs in vit')
+    >>> kw_match('best clubs in vit')
 
     Parameters:
     ----------
@@ -18,7 +18,7 @@ def factoid(query):
        question: string
 
        output:
-       confidence, answer or None
+       module_name: string, None
     '''
     query = query.translate(None, string.punctuation)
     tokens = [SnowballStemmer('english').stem(token)
@@ -27,6 +27,6 @@ def factoid(query):
     for token in tokens:
         for module, module_list in keywords.items():
             if token in module_list:
-                return eval(module)(query, tokens)
+                return module
 
     return None

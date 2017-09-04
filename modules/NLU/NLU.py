@@ -2,6 +2,10 @@
 
 from __future__ import unicode_literals
 import logging
+from kw_match import kw_match
+from domains import *
+
+
 from rasa_nlu.model import Interpreter, Trainer, Metadata
 from rasa_nlu.config import RasaNLUConfig
 import rasa_nlu
@@ -41,9 +45,22 @@ class NLU:
 
         if self.interpreter is None:
             print "train if you got new.. using old one "
-            model_directory = self.trainer.persist('./models/')
-            metadata = Metadata.load(model_directory)
-            self.interpreter = Interpreter.load(metadata, config)
+            try:
+                model_directory = self.trainer.persist('./models/')
+                metadata = Metadata.load(model_directory)
+                self.interpreter = Interpreter.load(metadata, config)
+            except:
+                raise("Need to train model. No pre-trained model found.")
 
         result = self.interpreter.parse(sent.decode('utf-8'))
-        return result["intent"]
+        probable_module = result["intent"].split("-")
+        isCalc = probable_module[1]
+        module_name = kw_match(sent)
+
+        if isCalc:
+            return eval(probable_module[0])(sent, result["entities"])
+
+        return best_match(probable_module[0], sent)
+        #if module_name == probable_module[0] or module_name is None:
+        #   return eval(probable_module[0])(sent, result["entities"])
+
