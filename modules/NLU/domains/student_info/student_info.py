@@ -1,6 +1,6 @@
 import get_data
 import login_credentials
-from  ..attendance import string_functions
+from ..attendance import string_functions
 import timetable
 
 import math
@@ -36,7 +36,7 @@ class Course:
         if grade >= 9:
             self.attendance.minimum_percentage_required = 0
         if self.subject_type == 'Lab Only' or \
-           self.subject_type == 'Embedded Lab':
+                        self.subject_type == 'Embedded Lab':
             self.attendance.attendance_units = 2
 
     def get_dict(self):
@@ -109,7 +109,7 @@ class Attendance:
         :param no_of_classes:(n)
         """
         new_percentage = math.ceil(float(self.attended_classes +
-                                   (no_of_classes - 1) *
+                                         (no_of_classes - 1) *
                                          self.attendance_units) /
                                    (self.total_classes + no_of_classes *
                                     self.attendance_units) * 100)

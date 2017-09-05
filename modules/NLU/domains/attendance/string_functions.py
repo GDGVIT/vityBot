@@ -1,7 +1,9 @@
+import day_functions
+
 from fuzzywuzzy import fuzz
+
 import json
 import os
-import day_functions
 
 
 def get_names(course_dict):
