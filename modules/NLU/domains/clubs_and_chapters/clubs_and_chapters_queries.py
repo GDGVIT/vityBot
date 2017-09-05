@@ -5,13 +5,14 @@ client = MongoClient('localhost', 27017)
 db = client['clubs_and_chapters_data']
 db_q = client['clubs_and_chapters_questions']
 
-out_list = []
 prior_list = []
-
+out_list = []
 
 def clubs_and_chapters(query, token):
     flag = False
     confidence = 0
+    del prior_list[:]
+    del out_list[:]
 
     def check_tags(post):
         for tag in post["tags"]:
@@ -19,11 +20,17 @@ def clubs_and_chapters(query, token):
                     return(True)
         return(False)
 
+    def make_string(post):
+        if post["facebook"]=='':
+            return(str(post["name"])+"\n"+str(post["about"]))
+        s=str(post["name"])+"\n"+str(post["about"])+"\n"+str(post["facebook"])
+        return(s)
+
     def check_priority(post):
         if check_tags(post):
-            prior_list.append(post)
+            prior_list.append(make_string(post))
         if not len(prior_list):
-            out_list.append(post)
+            out_list.append(make_string(post))
 
     def calculate_confidence(typ):
         all_c = []
