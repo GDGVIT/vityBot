@@ -240,7 +240,7 @@ class Student:
         #
         # res = get_data.get_course_details(login_info)
 
-        with open(os.getcwd() + '/domains/student_info/ffcs.json') as f:  # temp json file
+        with open(os.path.join(os.path.dirname(__file__), 'ffcs.json')) as f:  # temp json file
             res = json.load(f)
 
         self.name = res['name']

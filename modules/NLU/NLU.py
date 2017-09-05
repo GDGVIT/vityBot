@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 import logging
 from kw_match import kw_match
 from domains import *
+from best_match import best_match
 
 import sys, os
 sys.path.insert(0, os.path.abspath('rasa_nlu'))
@@ -62,18 +63,11 @@ class NLU:
 		        
         probable_module = result["intent"]['name'].split("-")
         
-        isCalc = probable_module[1]
+        isCalc = len(probable_module) - 1
         module_name = kw_match(sent)
 
         if isCalc:
             return eval(probable_module[0])(sent, user)
-
-        return 'its not a calculation based question'
-	        
+    
 	#return best_match(probable_module[0], sent)
-        #if module_name == probable_module[0] or module_name is None:
-        #   return eval(probable_module[0])(sent, result["entities"])
-
-
-#user = get_user()
-#print attendance('my attendance in physics', user)
+        return best_match(sent)
