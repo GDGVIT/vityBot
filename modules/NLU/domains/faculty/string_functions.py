@@ -8,7 +8,7 @@ data = list()   # faculty data taken from output folder
 
 # should be replaced with VIT API
 # with open('db/output/data.json') as f:
-with open(os.getcwd() + '/domains/faculty/db/output/data.json') as f:
+with open(os.path.join(os.path.dirname(__file__), 'db/output/data.json')) as f:
     data = json.load(f)
 
 

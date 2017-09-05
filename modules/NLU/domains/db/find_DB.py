@@ -1,4 +1,4 @@
-#import env
+import env
 import sys
 
 from .. import attendance
@@ -7,7 +7,7 @@ from ..timetable import handle_query
 from fuzzywuzzy import fuzz
 import pymongo
 
-#host = env.host
+host = env.host
 conn = pymongo.MongoClient(host)
 db = conn['vitybot']
 col = db.ques

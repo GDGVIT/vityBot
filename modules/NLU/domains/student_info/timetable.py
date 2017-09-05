@@ -65,7 +65,7 @@ def generate(course_list):
 
     output = dict(monday=[], tuesday=[], wednesday=[], thursday=[], friday=[])
 
-    with open(os.getcwd() + '/domains/student_info/tt.json') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'tt.json')) as f:
         tt = json.load(f)   # use general timetable
 
     days = tt.keys()
