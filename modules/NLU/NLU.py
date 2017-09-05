@@ -5,10 +5,15 @@ import logging
 from kw_match import kw_match
 from domains import *
 
+import sys, os
+sys.path.insert(0, os.path.abspath('rasa_nlu'))
+
+from rasa_nlu.converters import load_db_data
 
 from rasa_nlu.model import Interpreter, Trainer, Metadata
 from rasa_nlu.config import RasaNLUConfig
 import rasa_nlu
+
 
 model_config = {
     "pipeline": [
@@ -37,11 +42,12 @@ class NLU:
     def __call__(self):
         pass
 
-    def train(self, training_data):
+    def train(self, db_name, uri=None):
 
+	training_data = load_db_data(db_name, uri)
         self.interpreter = self.trainer.train(training_data)
 
-    def classify(self, sent):
+    def classify(self, sent, user):
 
         if self.interpreter is None:
             print "train if you got new.. using old one "
@@ -53,14 +59,21 @@ class NLU:
                 raise("Need to train model. No pre-trained model found.")
 
         result = self.interpreter.parse(sent.decode('utf-8'))
-        probable_module = result["intent"].split("-")
+		        
+        probable_module = result["intent"]['name'].split("-")
+        
         isCalc = probable_module[1]
         module_name = kw_match(sent)
 
         if isCalc:
-            return eval(probable_module[0])(sent, result["entities"])
+            return eval(probable_module[0])(sent, user)
 
-        return best_match(probable_module[0], sent)
+        return 'its not a calculation based question'
+	        
+	#return best_match(probable_module[0], sent)
         #if module_name == probable_module[0] or module_name is None:
         #   return eval(probable_module[0])(sent, result["entities"])
 
+
+#user = get_user()
+#print attendance('my attendance in physics', user)

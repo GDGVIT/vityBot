@@ -1,10 +1,17 @@
 from domains import student_info
-from domains import attendance
-from domains import faculty
-from domains import timetable
+from domains.attendance import attendance
+from domains.faculty import faculty
+from domains.timetable import timetable
 
 user = student_info.get_user()
 
-print attendance.attendance('my attendance in cse', user)
-print faculty.faculty('what is narayan  email', user)
-print timetable.timetable('what is my next class', user)
+print attendance('my attendance in cse', user)
+print faculty('what is narayan  email', user)
+print timetable('what is my next class', user)
+'''
+
+from domains import *
+
+user  = student_info.get_user()
+print = attendance.attendance(
+'''

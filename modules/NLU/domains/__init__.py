@@ -21,7 +21,11 @@
 
 """
 
-import bot
+# import bot
+from attendance import attendance
+from faculty import faculty
+from timetable import timetable
+from student_info import get_user
 
 # these are dummy functions and lists
 #def attendance(question, tokens=None):
