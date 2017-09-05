@@ -1,5 +1,6 @@
 from fuzzywuzzy import fuzz
 import json
+import os
 import day_functions
 
 
@@ -65,7 +66,7 @@ def get_days(slots):
     :param slots:list of slots
     """
 
-    with open('attendance/tt.json') as file_obj:
+    with open(os.getcwd() + '/domains/attendance/tt.json') as file_obj:
         table = json.load(file_obj)
 
     days = list()

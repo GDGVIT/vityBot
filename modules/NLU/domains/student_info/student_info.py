@@ -1,10 +1,11 @@
 import get_data
 import login_credentials
-from attendance import string_functions
+from  ..attendance import string_functions
 import timetable
 
 import math
 import json
+import os
 from datetime import time
 from datetime import datetime
 
@@ -239,7 +240,7 @@ class Student:
         #
         # res = get_data.get_course_details(login_info)
 
-        with open('student_info/ffcs.json') as f:  # temp json file
+        with open(os.getcwd() + '/domains/student_info/ffcs.json') as f:  # temp json file
             res = json.load(f)
 
         self.name = res['name']

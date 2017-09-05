@@ -1,12 +1,13 @@
-import env
+#import env
+import sys
 
-import attendance
-import faculty
-import timetable.handle_query
+from .. import attendance
+from .. import faculty
+from ..timetable import handle_query
 from fuzzywuzzy import fuzz
 import pymongo
 
-host = env.host
+#host = env.host
 conn = pymongo.MongoClient(host)
 db = conn['vitybot']
 col = db.ques
@@ -30,7 +31,7 @@ def find_match(query):
             doc = d
 
     del doc['_id']
-    return doc
+    return doc['answer']
 
 
 key = ['x_day', 'x_class', 'x_days', 'x_classes']
@@ -54,8 +55,6 @@ def get_response(query, intent, user):
             return response
 
     if intent == 'timetable-calculation':
-        response = timetable.handle_query.process_query(user, query)
+        response = handle_query.process_query(user, query)
         if response:
             return response
-
-    # return matched_dbdata['answer']

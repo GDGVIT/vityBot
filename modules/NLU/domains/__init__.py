@@ -21,14 +21,15 @@
 
 """
 
+import bot
 
 # these are dummy functions and lists
-def attendance(question, tokens=None):
-    return (0.8, 'got the question')
+#def attendance(question, tokens=None):
+#    return (0.8, 'got the question')
 
 
-def clubs_chapters(question, tokens=None):
-    return (0.8, 'got the question')
+#def clubs_chapters(question, tokens=None):
+#    return (0.8, 'got the question')
 
 
 # all keywords include all the days of the week

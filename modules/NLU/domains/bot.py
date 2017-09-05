@@ -1,6 +1,6 @@
 import student_info
+import student_info.get_data
 import attendance.handle_query
-import attendance
 import faculty.handle_query
 import db.find_DB
 

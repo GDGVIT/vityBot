@@ -5,6 +5,7 @@ assumptions:
 """
 from datetime import time
 import json
+import os
 
 
 def generate(course_list):
@@ -64,7 +65,7 @@ def generate(course_list):
 
     output = dict(monday=[], tuesday=[], wednesday=[], thursday=[], friday=[])
 
-    with open('student_info/tt.json') as f:
+    with open(os.getcwd() + '/domains/student_info/tt.json') as f:
         tt = json.load(f)   # use general timetable
 
     days = tt.keys()
