@@ -95,8 +95,8 @@ def get_response(keyword, course, user):
                     # questions like 'how many more classes to attend
                     cnt = 0
 
-                    while course.attendance.is_debarred(
-                            course.attendance.miss_next_class(cnt)):
+                    while course.attendance.is_debarred(        # !BUG BUG BUG
+                            course.attendance.attend_next_class(cnt)):
                         cnt += 1
 
                     if cnt:

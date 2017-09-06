@@ -91,7 +91,7 @@ def get_keyword(query):
 
     # verbs and their synonyms
     attend = ['go', 'attend']
-    miss = ['miss', 'skip', 'don\'t', 'bunk']
+    miss = ['miss', 'skip', 'don\'t', 'bunk', 'dont']
 
     # code to check queries regarding attendance over a few classes
     li = list()
