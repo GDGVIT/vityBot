@@ -69,5 +69,5 @@ class NLU:
         if isCalc:
             return eval(probable_module[0])(sent, user)
     
-	#return best_match(probable_module[0], sent)
-        return best_match(sent)
+	return best_match(probable_module[0], sent)
+        #return best_match(sent, )
