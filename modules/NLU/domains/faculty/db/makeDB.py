@@ -11,7 +11,7 @@ import json
 writes list of question and answer from .npys to DB
 """
 
-conn = # host link here
+#conn = # host link here
 db = conn['chatbot-learn']
 coll = db.ques
 
