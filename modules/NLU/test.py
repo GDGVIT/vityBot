@@ -6,4 +6,4 @@ import best_match
 
 user = student_info.get_user()
 
-print attendance('what is my attendance in mat2002 lab', user)
+print attendance('how many classes i can miss in physics', user)

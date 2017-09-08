@@ -17,3 +17,8 @@ class Bot:
     def get_reply(self, query):
         reply = self.nlu.classify(query, self.user)
         return reply
+
+bot = Bot()
+bot.nlu.train()
+bot.get_reply('my attendance in soft skills')
+
