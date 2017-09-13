@@ -15,7 +15,7 @@ class LoginDetails:
             if re.match(r, self.regid):
                 break
             else:
-                print 'invalid user ID. try again'
+                print('invalid user ID. try again')
 
         self.psswd = getpass.getpass('Password: ')
 
