@@ -1,4 +1,4 @@
-import string_functions
+from vityBot.modules.NLU.domains.faculty import string_functions
 
 
 def get_response(keyword, faculty):

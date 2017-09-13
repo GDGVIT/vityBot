@@ -1,4 +1,4 @@
-import env
+from vityBot.modules.NLU.domains.db import env
 
 from fuzzywuzzy import fuzz
 import pymongo

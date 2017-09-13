@@ -1,4 +1,4 @@
-import string_functions
+from vityBot.modules.NLU.domains.timetable import string_functions
 from datetime import datetime
 
 
