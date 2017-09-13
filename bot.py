@@ -1,5 +1,5 @@
-from modules.NLU import NLU
-from modules.NLU.domains.student_info import get_user
+from vityBot.modules.NLU import NLU
+from vityBot.modules.NLU.domains.student_info import get_user
 
 
 class Bot:

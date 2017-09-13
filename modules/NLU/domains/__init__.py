@@ -22,10 +22,10 @@
 """
 
 # import bot
-from attendance import attendance
-from faculty import faculty
-from timetable import timetable
-from student_info import get_user
+from vityBot.modules.NLU.domains.attendance import attendance
+from vityBot.modules.NLU.domains.faculty import faculty
+from vityBot.modules.NLU.domains.timetable import timetable
+from vityBot.modules.NLU.domains.student_info import get_user
 
 # these are dummy functions and lists
 #def attendance(question, tokens=None):

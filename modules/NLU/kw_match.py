@@ -1,7 +1,7 @@
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import string
-from domains import *
+from vityBot.modules.NLU.domains import *
 StopWords = set(stopwords.words('english'))
 
 

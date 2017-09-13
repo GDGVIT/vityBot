@@ -1,5 +1,5 @@
-import day_functions
-import string_functions
+import vityBot.modules.NLU.domains.attendance.day_functions
+import vityBot.modules.NLU.domains.attendance.string_functions
 
 
 def get_response(keyword, course, user):

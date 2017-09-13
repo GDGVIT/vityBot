@@ -1,4 +1,4 @@
-import handle_query
+import vityBot.modules.NLU.domains.attendance.handle_query
 
 
 def attendance(query, user):

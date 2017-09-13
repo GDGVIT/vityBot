@@ -1,7 +1,7 @@
-import get_data
-import login_credentials
+import vityBot.modules.NLU.domains.student_info.get_data
+import vityBot.modules.NLU.domains.student_info.login_credentials
 from ..attendance import string_functions
-import timetable
+from vityBot.modules.NLU.domains.student_info import timetable
 
 import math
 import json
