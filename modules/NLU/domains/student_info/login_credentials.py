@@ -10,7 +10,7 @@ class LoginDetails:
     """
     def __init__(self):
         while True:
-            self.regid = raw_input('User ID: ').upper()
+            self.regid = input('User ID: ').upper()
 
             if re.match(r, self.regid):
                 break

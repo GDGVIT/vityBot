@@ -6,7 +6,7 @@ StopWords = set(stopwords.words('english'))
 
 
 def kw_match(query):
-    '''
+    """
     Example-
     -------
     >>> kw_match('best clubs in vit')
@@ -19,8 +19,8 @@ def kw_match(query):
 
        output:
        module_name: string, None
-    '''
-    query = query.translate(None, string.punctuation)
+    """
+    query = query.translate(string.punctuation)
     tokens = [SnowballStemmer('english').stem(token)
               for token in query.split() if token not in StopWords]
 

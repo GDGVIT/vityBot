@@ -36,7 +36,7 @@ class Course:
         if grade >= 9:
             self.attendance.minimum_percentage_required = 0
         if self.subject_type == 'Lab Only' or \
-                        self.subject_type == 'Embedded Lab':
+            self.subject_type == 'Embedded Lab':
             self.attendance.attendance_units = 2
 
     def get_dict(self):

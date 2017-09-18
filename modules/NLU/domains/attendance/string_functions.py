@@ -1,4 +1,4 @@
-import vityBot.modules.NLU.domains.attendance.day_functions
+from vityBot.modules.NLU.domains.attendance import day_functions
 
 from fuzzywuzzy import fuzz
 
