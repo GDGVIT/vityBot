@@ -6,9 +6,14 @@ from __future__ import absolute_import
 from vityBot.modules.NLU.kw_match import kw_match
 from vityBot.modules.NLU.domains import *
 from vityBot.modules.NLU.best_match import best_match
-from vityBot.modules.NLU.rasa_nlu.converters import load_db_data
-from vityBot.modules.NLU.rasa_nlu.model import Interpreter, Trainer, Metadata
-from vityBot.modules.NLU.rasa_nlu.config import RasaNLUConfig
+
+# not required when installing directly
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'rasa_nlu'))
+
+from rasa_nlu.converters import load_db_data
+from rasa_nlu.model import Interpreter, Trainer, Metadata
+from rasa_nlu.config import RasaNLUConfig
 
 import logging
 
