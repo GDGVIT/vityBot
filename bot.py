@@ -1,5 +1,5 @@
-from modules.NLU import NLU
-from modules.NLU.domains.student_info import get_user
+from vityBot.modules.NLU import NLU
+from vityBot.modules.NLU.domains.student_info import get_user
 
 
 class Bot:
@@ -17,8 +17,3 @@ class Bot:
     def get_reply(self, query):
         reply = self.nlu.classify(query, self.user)
         return reply
-
-bot = Bot()
-bot.nlu.train()
-bot.get_reply('my attendance in soft skills')
-

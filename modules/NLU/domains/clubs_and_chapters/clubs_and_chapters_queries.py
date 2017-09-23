@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from fuzzywuzzy import fuzz
+
 client = MongoClient()
 client = MongoClient('localhost', 27017)
 db = client['clubs_and_chapters_data']
@@ -7,6 +8,7 @@ db_q = client['clubs_and_chapters_questions']
 
 prior_list = []
 out_list = []
+
 
 def clubs_and_chapters(query, token):
     flag = False
@@ -16,15 +18,15 @@ def clubs_and_chapters(query, token):
 
     def check_tags(post):
         for tag in post["tags"]:
-                if tag.lower() in query:
-                    return(True)
-        return(False)
+            if tag.lower() in query:
+                return (True)
+        return (False)
 
     def make_string(post):
-        if post["facebook"]=='':
-            return(str(post["name"])+"\n"+str(post["about"]))
-        s=str(post["name"])+"\n"+str(post["about"])+"\n"+str(post["facebook"])
-        return(s)
+        if post["facebook"] == '':
+            return str(post["name"]) + "\n" + str(post["about"])
+        s = str(post["name"]) + "\n" + str(post["about"]) + "\n" + str(post["facebook"])
+        return s
 
     def check_priority(post):
         if check_tags(post):
@@ -36,7 +38,7 @@ def clubs_and_chapters(query, token):
         all_c = []
         for i in db_q.posts.find({"type": str(typ)}):
             all_c.append(fuzz.token_sort_ratio(i["question"].lower(), query))
-        return(max(all_c))
+        return (max(all_c))
 
     # Clubs and chapters according to ratings
     if ("best" in query) or ("top" in query):
@@ -60,8 +62,8 @@ def clubs_and_chapters(query, token):
     if not flag:
         for post in db.posts.find({}):
             if (post["name"].lower() in query) or \
-                    (post["abbrivation"].lower() in query) and \
-                    (post["abbrivation"] != ''):
+                            (post["abbrivation"].lower() in query) and \
+                            (post["abbrivation"] != ''):
                 flag = True
                 check_priority(post)
         if flag:
@@ -92,5 +94,5 @@ def clubs_and_chapters(query, token):
             confidence = calculate_confidence(3)
 
     if len(prior_list):
-        return(prior_list, confidence)
-    return(out_list, confidence)
+        return prior_list, confidence
+    return out_list, confidence

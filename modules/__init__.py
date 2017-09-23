@@ -1,1 +1,1 @@
-from NLU import NLU
+from vityBot.modules.NLU import NLU

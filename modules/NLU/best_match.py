@@ -1,4 +1,4 @@
-from domains.db import find_DB
+from vityBot.modules.NLU.domains.db import find_DB
 
 
 def best_match(query, intent):

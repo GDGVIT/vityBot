@@ -10,12 +10,12 @@ class LoginDetails:
     """
     def __init__(self):
         while True:
-            self.regid = raw_input('User ID: ').upper()
+            self.regid = input('User ID: ').upper()
 
             if re.match(r, self.regid):
                 break
             else:
-                print 'invalid user ID. try again'
+                print('invalid user ID. try again')
 
         self.psswd = getpass.getpass('Password: ')
 

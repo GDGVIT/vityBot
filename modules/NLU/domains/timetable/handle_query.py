@@ -1,4 +1,4 @@
-import string_functions
+from vityBot.modules.NLU.domains.timetable import string_functions
 from datetime import datetime
 
 
@@ -8,7 +8,7 @@ def leadzero(val):
     :param val: integer
     :return: string with leading zero
     """
-    s = '%02d' % (val)
+    s = '%02d' % val
     return s
 
 
