@@ -1,5 +1,5 @@
 boto3==1.4.7
-botocore==1.7.3
+botocore==1.12.211
 cloudpickle==0.4.0
 future==0.16.0
 fuzzywuzzy==0.14.0
