@@ -7,10 +7,10 @@ jsonschema==2.6.0
 matplotlib==3.1.1
 nltk==3.2.2
 numpy==1.17.0
-setuptools==36.2.7
+setuptools==41.2.0
 pymongo==3.4.0
 requests==2.20.0
-setuptools==36.2.7
+setuptools==41.2.0
 six==1.10.0
 sklearn_crfsuite==0.3.6
 spacy==1.9.0
