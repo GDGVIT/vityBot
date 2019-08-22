@@ -18,7 +18,7 @@ tqdm==4.15.0
 typing==3.6.2
 duckling==1.7.3
 protobuf==3.4.0
-klein==17.2.0
+klein==19.6.0
 pytest==3.2.1
 scikit_learn==0.19.0
 treq==17.8.0
