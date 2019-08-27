@@ -1,6 +1,6 @@
 boto3==1.9.215
 botocore==1.12.215
-cloudpickle==0.4.0
+cloudpickle==1.2.1
 future==0.17.1
 fuzzywuzzy==0.14.0
 jsonschema==3.0.2
