@@ -19,7 +19,7 @@ typing==3.6.2
 duckling==1.7.3
 protobuf==3.9.1
 klein==19.6.0
-pytest==3.2.1
+pytest==5.1.1
 scikit_learn==0.19.0
 treq==17.8.0
 Twisted==19.7.0
