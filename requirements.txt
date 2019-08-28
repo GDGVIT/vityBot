@@ -16,7 +16,7 @@ sklearn_crfsuite==0.3.6
 spacy==1.9.0
 tqdm==4.34.0
 typing==3.6.2
-duckling==1.7.3
+duckling==1.8.0
 protobuf==3.9.1
 klein==19.6.0
 pytest==3.2.1
