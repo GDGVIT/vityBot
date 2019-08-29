@@ -20,7 +20,7 @@ duckling==1.8.0
 protobuf==3.9.1
 klein==19.6.0
 pytest==5.1.1
-scikit_learn==0.19.0
+scikit_learn==0.21.3
 treq==18.6.0
 Twisted==19.7.0
 python-Levenshtein==0.12.0
