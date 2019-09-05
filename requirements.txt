@@ -15,7 +15,7 @@ six==1.12.0
 sklearn_crfsuite==0.3.6
 spacy==2.1.8
 tqdm==4.35.0
-typing==3.6.2
+typing==3.7.4.1
 duckling==1.8.0
 protobuf==3.9.1
 klein==19.6.0
