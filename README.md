@@ -1,5 +1,5 @@
 # vityBot
-An assistant to answer all queries about VIT powered by RASA NLU complimented with several hand written rules.
+An assistant to answer all queries about VIT powered by RASA NLU complemented with several hand written rules.
 
 ![demo](demo.png)
 
